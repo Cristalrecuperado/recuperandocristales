@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<items>
+
+
+<item>
+<title>[COLOR lightsalmon][B]CINETORRENT [COLOR white]BUSCADOR[/COLOR][/B]</title>
+<link>$doregex[r]</link>
+<regex>
+<name>r</name>
+<listrepeat><![CDATA[
+    <title>$pyFunction:('[r.param3]').replace('#8217;','’').replace('#8216;',' ’').replace('#8211;','-').replace('#8230;','...').replace('#215;','x').replace('&','').replace('#038;','&')</title>
+    <link>$doregex[select]</link>
+    <thumbnail>[r.param2]</thumbnail>
+    <fanart>[r.param2]</fanart>
+]]></listrepeat>
+<expres><![CDATA[class="tplve".*?"(ht.*?)".*?src="(.*?)".*?alt="(.*?)"]]></expres>
+<page>https://www.newpct.me/?s=$doregex[buscar]</page>
+</regex>
+<regex>
+<name>buscar</name>
+<expres><![CDATA[#$pyFunction
+import xbmc
+import xbmcaddon
+import xbmcgui
+def GetLSProData(page_data,Cookie_Jar,m):
+    dialog = xbmcgui.Dialog()
+    d = dialog.input('Buscar Pelicula: ', type=xbmcgui.INPUT_ALPHANUM).replace(" ", "+")
+    return d
+]]></expres>
+<page></page>
+<cookiejar></cookiejar>
+</regex>
+<regex>
+<name>select</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    ret = dialog.select('Ver con:', ['[COLOR lightsalmon]Quasar[/COLOR]', '[COLOR lightsalmon]Torrenter[/COLOR]', '[COLOR lightsalmon]Elementum[/COLOR]', '[COLOR lightsalmon]Torrentin[/COLOR]'])
+    channels = [
+  'plugin://plugin.video.quasar/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrenter/?action=playSTRM&url=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.elementum/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrentin/?uri=$doregex[j63]&image=imageurl&player=0']  
+    return channels[ret]
+]]></expres><page></page></regex>
+<regex><name>j63</name><expres><![CDATA["(magnet:.*?)"]]></expres>
+<page>[regex.param1]</page>
+</regex>
+<fanart>https://i.imgur.com/i6rVUIV.jpg</fanart> 
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+</item>
+
+
+
+<item>
+<title>[COLOR lightsalmon][B]CINETORRENT [COLOR white]POR  IDIOMAS[/COLOR][/B]</title>
+<link>$doregex[jdlist]</link>
+<regex>
+<name>jdlist</name>
+<listrepeat><![CDATA[
+  <title>[COLOR ffffffff][B][jdlist.param2][/B][/COLOR]</title>
+  <link>$doregex[j63list1]</link>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/i6rVUIV.jpg</fanart>
+]]></listrepeat>
+<expres><![CDATA[col-lg-4">\s<a href="(http.*?me\/idioma\/.*?)".*?">(.*?)<]]></expres>
+<page>https://www.newpct.me/</page>
+</regex>
+<regex>
+<name>j63list1</name>
+<listrepeat><![CDATA[
+<title>[B]  [COLOR=fff5f5f5][j63list1.param3][/B][/COLOR]</title>
+<link>$doregex[select]</link>
+<thumbnail>[j63list1.param2]</thumbnail>
+   <fanart>[j63list1.param2]</fanart>
+  <info>[j63addon.param5]</info>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import re,requests
+def GetLSProData(page_data,Cookie_Jar,m):
+  url='[jdlist.param1]page/{}/'
+  headers={'user-agent':'Mozilla/5.0','referer':'https://www.newpct.me/','accept':'*/*'};data=[]
+  for p in range(1,10):
+    source=requests.get(url.format(p),headers=headers,cookies=Cookie_Jar).content.replace('#038;','').replace('#8217;','')
+    gtitle=re.findall('class="tplve".*?jpg".*?.*?alt="(.*?)"',source)
+    for t in gtitle:
+       title=t.title()
+       source=source.replace(t,title)
+    data +=re.findall('class="tplve".*?"(ht.*?)".*?src="(.*?)".*?alt="(.*?)"',re.findall('id="principal">(?s)(.*?)"paginacion',source)[0])
+  return data
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>select</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    ret = dialog.select('Ver con:', ['[COLOR aqua]Quasar[/COLOR]', '[COLOR aqua]Torrenter[/COLOR]', '[COLOR aqua]Elementum[/COLOR]', '[COLOR aqua]Torrentin[/COLOR]'])
+    channels = [
+  'plugin://plugin.video.quasar/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrenter/?action=playSTRM&url=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.elementum/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrentin/?uri=$doregex[j63]&image=imageurl&player=0']  
+    return channels[ret]
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>j63</name>
+<expres><![CDATA["(magnet:.*?)"]]></expres>
+<page>[j63list1.param1]</page></regex>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/5N4e29A.jpg</fanart> 
+</item>
+
+
+
+
+
+<item>
+<title>[COLOR lightsalmon][B]CINETORRENT [COLOR white]POR  CALIDAD[/COLOR][/B]</title>
+<link>$doregex[jdlist]</link>
+<regex>
+<name>jdlist</name>
+<listrepeat><![CDATA[
+  <title>[COLOR ffffffff][B][jdlist.param3][/B][/COLOR]</title>
+  <link>$doregex[j63list1]</link>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/i6rVUIV.jpg</fanart>
+]]></listrepeat>
+<expres><![CDATA[me\/((peliculas-|calidad).*?\/)".*?">(.*?)<]]></expres>
+<page>https://www.newpct.me/</page>
+</regex>
+<regex>
+<name>j63list1</name>
+<listrepeat><![CDATA[
+<title>[B]  [COLOR=fff5f5f5][j63list1.param3][/B][/COLOR]</title>
+<link>$doregex[select]</link>
+<thumbnail>[j63list1.param2]</thumbnail>
+   <fanart>[j63list1.param2]</fanart>
+  <info>[j63addon.param5]</info>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import re,requests
+def GetLSProData(page_data,Cookie_Jar,m):
+  url='https://www.newpct.me/[jdlist.param1]page/{}/'
+  headers={'user-agent':'Mozilla/5.0','referer':'https://www.newpct.me/','accept':'*/*'};data=[]
+  for p in range(1,10):
+    source=requests.get(url.format(p),headers=headers,cookies=Cookie_Jar).content.replace('#038;','').replace('#8217;','')
+    gtitle=re.findall('class="tplve".*?jpg".*?.*?alt="(.*?)"',source)
+    for t in gtitle:
+       title=t.title()
+       source=source.replace(t,title)
+    data +=re.findall('class="tplve".*?"(ht.*?)".*?src="(.*?)".*?alt="(.*?)"',re.findall('id="principal">(?s)(.*?)"paginacion',source)[0])
+  return data
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>select</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    ret = dialog.select('Ver con:', ['[COLOR aqua]Quasar[/COLOR]', '[COLOR aqua]Torrenter[/COLOR]', '[COLOR aqua]Elementum[/COLOR]', '[COLOR aqua]Torrentin[/COLOR]'])
+    channels = [
+  'plugin://plugin.video.quasar/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrenter/?action=playSTRM&url=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.elementum/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrentin/?uri=$doregex[j63]&image=imageurl&player=0']  
+    return channels[ret]
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>j63</name>
+<expres><![CDATA["(magnet:.*?)"]]></expres>
+<page>[j63list1.param1]</page>
+</regex>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/5N4e29A.jpg</fanart> 
+</item>
+
+
+
+<item>
+<title>[COLOR lightsalmon][B]CINETORRENT [COLOR white]POR  GÉNERO[/COLOR][/B]</title>
+<link>$doregex[jdlist]</link>
+<regex>
+<name>jdlist</name>
+<listrepeat><![CDATA[
+  <title>[COLOR ffffffff][B][jdlist.param2][/B][/COLOR]</title>
+  <link>$doregex[j63list1]</link>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/i6rVUIV.jpg</fanart>
+]]></listrepeat>
+<expres><![CDATA[me\/(genero\/.*?\/)".*?">(.*?)<]]></expres>
+<page>https://www.newpct.me/</page>
+</regex>
+<regex>
+<name>j63list1</name>
+<listrepeat><![CDATA[
+<title>[B]  [COLOR=fff5f5f5][j63list1.param3][/B][/COLOR]</title>
+<link>$doregex[select]</link>
+<thumbnail>[j63list1.param2]</thumbnail>
+   <fanart>[j63list1.param2]</fanart>
+  <info>[j63addon.param5]</info>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import re,requests
+def GetLSProData(page_data,Cookie_Jar,m):
+  url='https://www.newpct.me/[jdlist.param1]page/{}/'
+  headers={'user-agent':'Mozilla/5.0','referer':'https://www.newpct.me/','accept':'*/*'};data=[]
+  for p in range(1,6):
+    source=requests.get(url.format(p),headers=headers,cookies=Cookie_Jar).content.replace('#038;','').replace('#8217;','')
+    gtitle=re.findall('class="tplve".*?jpg".*?.*?alt="(.*?)"',source)
+    for t in gtitle:
+       title=t.title()
+       source=source.replace(t,title)
+    data +=re.findall('class="tplve".*?"(ht.*?)".*?src="(.*?)".*?alt="(.*?)"',re.findall('id="principal">(?s)(.*?)"paginacion',source)[0])
+  return data
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>select</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    ret = dialog.select('Ver con:', ['[COLOR aqua]Quasar[/COLOR]', '[COLOR aqua]Torrenter[/COLOR]', '[COLOR aqua]Elementum[/COLOR]', '[COLOR aqua]Torrentin[/COLOR]'])
+    channels = [
+  'plugin://plugin.video.quasar/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrenter/?action=playSTRM&url=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.elementum/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrentin/?uri=$doregex[j63]&image=imageurl&player=0']  
+    return channels[ret]
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>j63</name>
+<expres><![CDATA["(magnet:.*?)"]]></expres>
+<page>[j63list1.param1]</page>
+</regex>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/5N4e29A.jpg</fanart> 
+</item>
+
+
+
+
+			
+<item>
+<title>[COLOR lightsalmon][B]CINETORRENT [COLOR white]TOTAL[/COLOR][/B]</title>
+ <link>$doregex[j63list1]</link> 
+<regex>
+<name>j63list1</name>
+<listrepeat><![CDATA[
+<title>[B]  [COLOR=fff5f5f5][j63list1.param3][/B][/COLOR]</title>
+<link>$doregex[select]</link>
+<thumbnail>[j63list1.param2]</thumbnail>
+   <fanart>[j63list1.param2]</fanart>
+  <info>[j63addon.param5]</info>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import re,requests
+def GetLSProData(page_data,Cookie_Jar,m):
+  url='https://www.newpct.me/peliculas/page/{}/'
+  headers={'user-agent':'Mozilla/5.0','referer':'https://www.newpct.me/','accept':'*/*'};data=[]
+  for p in range(1,15):
+    source=requests.get(url.format(p),headers=headers,cookies=Cookie_Jar).content.replace('#038;','').replace('#8217;','')
+    gtitle=re.findall('class="tplve".*?jpg".*?.*?alt="(.*?)"',source)
+    for t in gtitle:
+       title=t.title()
+       source=source.replace(t,title)
+    data +=re.findall('class="tplve".*?"(ht.*?)".*?src="(.*?)".*?alt="(.*?)"',re.findall('id="principal">(?s)(.*?)"paginacion',source)[0])
+  return data
+]]></expres>
+<page></page>
+</regex>
+<regex><name>select</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    ret = dialog.select('Ver con:', ['[COLOR aqua]Quasar[/COLOR]', '[COLOR aqua]Torrenter[/COLOR]', '[COLOR aqua]Elementum[/COLOR]', '[COLOR aqua]Torrentin[/COLOR]'])
+    channels = [
+  'plugin://plugin.video.quasar/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrenter/?action=playSTRM&url=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.elementum/play?uri=$doregex[j63]&image=imageurl&player=0',
+  'plugin://plugin.video.torrentin/?uri=$doregex[j63]&image=imageurl&player=0']  
+    return channels[ret]
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>j63</name>
+<expres><![CDATA["(magnet:.*?)"]]></expres>
+<page>[j63list1.param1]</page>
+</regex>
+<thumbnail>https://i.imgur.com/hEKykpy.jpg</thumbnail>
+<fanart>https://i.imgur.com/5N4e29A.jpg</fanart> 
+</item>
+
+
+
+
+
+
+
+</items>
