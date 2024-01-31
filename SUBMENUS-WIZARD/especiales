@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+
+<item>
+<title>[COLOR gold]ESPECIAL[/COLOR] [COLOR white]CARNAVAL[COLOR yellow][/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[c]</externallink>
+<regex>
+<name>c</name>
+<expres><![CDATA[#$pyFunction
+import urllib, re, requests, xbmcgui, xbmc, xbmcaddon, time
+import os
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+    xbmc.executebuiltin('PlayMedia("https://archive.org/download/ademas.del.desconcierto.-carnaval.-2021/Ademas.del.desconcierto.Carnaval.2021.mp3",1)')
+    time.sleep( 1 )
+    return 'http://bit.ly/carnavalfesta'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>comecristal</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ import xbmc
+ import xbmcaddon
+ addon = xbmcaddon.Addon('plugin.video.cristalazul')
+ Url = 'link[::4] + url[:8] + Creditos[62:] = http://bit.ly/sourcecristalazul'
+ grupotelegram = 'http://t.me/addonfestaycristal'
+ Creditos = 'el_addon_cristalazul_fue_creado_por_el_grupo_festa_para_el_disfrute_en familia, este_addon_es_completamente_gratuito,disfrute_de_la_seccion_de_tv_premium'
+ cristal = 'jdt_cristal_azul_para_todos_gratuita_creada_por_picapau_y_lourdes'
+ info = 'british.true.Build.py %7/'
+ return  grupotelegram[:7] + info[::4] + cristal[:3] + Creditos[146:]
+def revist_dag(page_data):
+  final_url = ''
+  if '127.0.0.1' in page_data:
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + ' live=true timeout=15 playpath=' + re_me(page_data, '\\?y=([a-zA-Z0-9-_\\.@]+)')
+ 
+  if re_me(page_data, 'token=([^&]+)&') != '':
+      final_url = final_url + '?token=' + re_me(page_data, 'token=([^&]+)&')
+  elif re_me(page_data, 'wmsAuthSign%3D([^%&]+)') != '':
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + '?wmsAuthSign=' + re_me(page_data, 'wmsAuthSign%3D([^%&]+)') + '==/mp4:' + re_me(page_data, '\\?y=([^&]+)&')
+  else:
+      final_url = re_me(page_data, 'HREF="([^"]+)"')
+ 
+  if 'dag1.asx' in final_url:
+      return get_dag_url(final_url)
+ 
+  if 'devinlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('devinlive', 'flive')
+  if 'permlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('permlive', 'flive')
+  return ''
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://i.imgur.com/5ZgQgTO.jpg<thumbnail>
+<fanart>https://i.imgur.com/DJF7jOS.jpg</fanart>
+</item>
+
+
+
+
+
+============================================================================================================================
+
+<item>
+<title>[COLOR gold]ESPECIAL[/COLOR] [COLOR white]SEMANA SANTA[COLOR yellow][/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[c]</externallink>
+<regex>
+<name>c</name>
+<expres><![CDATA[#$pyFunction
+import urllib, re, requests, xbmcgui, xbmc, xbmcaddon, time
+import os
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+    xbmc.executebuiltin('PlayMedia("https://archive.org/download/semana.santa.sevilla.2020_202002/semana.santa.sevilla.2020.mp3",1)')
+    time.sleep( 1 )
+    return 'https://textbin.net/raw/Y19BFCi3UP'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>comecristal</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ import xbmc
+ import xbmcaddon
+ addon = xbmcaddon.Addon('plugin.video.cristalazul')
+ Url = 'link[::4] + url[:8] + Creditos[62:] = http://bit.ly/sourcecristalazul'
+ grupotelegram = 'http://t.me/addonfestaycristal'
+ Creditos = 'el_addon_cristalazul_fue_creado_por_el_grupo_festa_para_el_disfrute_en familia, este_addon_es_completamente_gratuito,disfrute_de_la_seccion_de_tv_premium'
+ cristal = 'jdt_cristal_azul_para_todos_gratuita_creada_por_picapau_y_lourdes'
+ info = 'british.true.Build.py %7/'
+ return  grupotelegram[:7] + info[::4] + cristal[:3] + Creditos[146:]
+def revist_dag(page_data):
+  final_url = ''
+  if '127.0.0.1' in page_data:
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + ' live=true timeout=15 playpath=' + re_me(page_data, '\\?y=([a-zA-Z0-9-_\\.@]+)')
+ 
+  if re_me(page_data, 'token=([^&]+)&') != '':
+      final_url = final_url + '?token=' + re_me(page_data, 'token=([^&]+)&')
+  elif re_me(page_data, 'wmsAuthSign%3D([^%&]+)') != '':
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + '?wmsAuthSign=' + re_me(page_data, 'wmsAuthSign%3D([^%&]+)') + '==/mp4:' + re_me(page_data, '\\?y=([^&]+)&')
+  else:
+      final_url = re_me(page_data, 'HREF="([^"]+)"')
+ 
+  if 'dag1.asx' in final_url:
+      return get_dag_url(final_url)
+ 
+  if 'devinlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('devinlive', 'flive')
+  if 'permlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('permlive', 'flive')
+  return ''
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://i.imgur.com/TdmQxP3.jpg<thumbnail>
+<fanart>https://i.imgur.com/3lasiEf.jpg</fanart>
+</item>
+=======================================================================================================================
+
+<item>
+<title>[COLOR gold]ESPECIAL[/COLOR] [COLOR white]DRAGON BALL [COLOR orangered][COLOR orangered][/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[c]</externallink>
+<regex>
+<name>c</name>
+<expres><![CDATA[#$pyFunction
+import urllib, re, requests, xbmcgui, xbmc, xbmcaddon, time
+import os
+def GetLSProData(page_data,Cookie_Jar,m):
+
+    xbmc.executebuiltin('PlayMedia("https://archive.org/download/dragonball.pelis/DragonBall.Pelis.mp3",1)')
+    time.sleep( 1 )
+    return 'https://raw.githubusercontent.com/FESTAKIDS/festakids/main/LILIANIME/menu.principal.especialdball'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>comecristal</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ import xbmc
+ import xbmcaddon
+ addon = xbmcaddon.Addon('plugin.video.cristalazul')
+ Url = 'link[::4] + url[:8] + Creditos[62:] = http://bit.ly/sourcecristalazul'
+ grupotelegram = 'http://t.me/addonfestaycristal'
+ Creditos = 'el_addon_cristalazul_fue_creado_por_el_grupo_festa_para_el_disfrute_en familia, este_addon_es_completamente_gratuito,disfrute_de_la_seccion_de_tv_premium'
+ cristal = 'jdt_cristal_azul_para_todos_gratuita_creada_por_picapau_y_lourdes'
+ info = 'british.true.Build.py %7/'
+ return  grupotelegram[:7] + info[::4] + cristal[:3] + Creditos[146:]
+def revist_dag(page_data):
+  final_url = ''
+  if '127.0.0.1' in page_data:
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + ' live=true timeout=15 playpath=' + re_me(page_data, '\\?y=([a-zA-Z0-9-_\\.@]+)')
+ 
+  if re_me(page_data, 'token=([^&]+)&') != '':
+      final_url = final_url + '?token=' + re_me(page_data, 'token=([^&]+)&')
+  elif re_me(page_data, 'wmsAuthSign%3D([^%&]+)') != '':
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + '?wmsAuthSign=' + re_me(page_data, 'wmsAuthSign%3D([^%&]+)') + '==/mp4:' + re_me(page_data, '\\?y=([^&]+)&')
+  else:
+      final_url = re_me(page_data, 'HREF="([^"]+)"')
+ 
+  if 'dag1.asx' in final_url:
+      return get_dag_url(final_url)
+ 
+  if 'devinlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('devinlive', 'flive')
+  if 'permlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('permlive', 'flive')
+  return ''
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]TV PREMIUM, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul sólo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+así como no se lucra ni se considera que sea prestador de servicios de intermediación,
+sólo da acesso a ésas webs, éstas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://i.imgur.com/HVX1tmn.jpg<thumbnail>
+<fanart>https://i.imgur.com/Ifecd8c.jpg</fanart>
+</item>
+
+============================================================================================================================
+<!--
+<item>
+<title>[COLOR gold]ESPECIAL [COLOR white] NAVIDAD[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[c]</externallink>
+<regex>
+<name>c</name>
+<expres><![CDATA[#$pyFunction
+import urllib, re, requests, xbmcgui, xbmc, xbmcaddon, time
+import os
+def GetLSProData(page_data,Cookie_Jar,m):
+
+    xbmc.executebuiltin('PlayMedia("$doregex[azar_musica]",1)')
+    time.sleep( 1 )
+    return '$doregex[distancia]'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,xbmc,xbmcaddon,xbmcgui,shutil,urllib2
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).content
+      return re.findall('="(.*?)"', pasta)[0]
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>azar_musica</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ import xbmc, xbmcaddon, shutil, random
+ opcion = ["https://archive.org/download/holly.-jolly.-christmas_202011/Holly.Jolly.Christmas.mp3", "https://archive.org/download/taylor-swift-last-christmas_202011/Taylor_Swift_Last_Christmas.mp3", "https://archive.org/download/mariah-carey-feat-michael-bublee_202011/Mariah_Carey_Feat_Michael_Bublee.mp3"]
+ azar = random.choice(opcion)
+ return azar
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]ESPECIAL, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul sólo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+así como no se lucra ni se considera que sea prestador de servicios de intermediación,
+sólo da acesso a ésas webs, éstas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://i.imgur.com/WVdmcUt.jpg</thumbnail>
+<fanart>https://i.imgur.com/6Ts8E1Z.jpg</fanart>
+</item>
+
+-->
+
+============================================================================================================================
+
+
+<item>
+<title>[COLOR gold]ESPECIAL[/COLOR] [COLOR lightsalmon][COLOR white]LOS OSCAR[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[c]</externallink>
+<regex>
+<name>c</name>
+<expres><![CDATA[#$pyFunction
+import urllib, re, requests, xbmcgui, xbmc, xbmcaddon, time
+import os
+def GetLSProData(page_data,Cookie_Jar,m):
+
+    xbmc.executebuiltin('PlayMedia("https://archive.org/download/oscars.theme/Oscars.Theme.mp3",1)')
+    time.sleep( 1 )
+    return 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CINE/Oscar/Menu.Los.Oscar.txt'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>comecristal</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ import xbmc
+ import xbmcaddon
+ addon = xbmcaddon.Addon('plugin.video.cristalazul')
+ Url = 'link[::4] + url[:8] + Creditos[62:] = http://bit.ly/sourcecristalazul'
+ grupotelegram = 'http://t.me/addonfestaycristal'
+ Creditos = 'el_addon_cristalazul_fue_creado_por_el_grupo_festa_para_el_disfrute_en familia, este_addon_es_completamente_gratuito,disfrute_de_la_seccion_de_tv_premium'
+ cristal = 'jdt_cristal_azul_para_todos_gratuita_creada_por_picapau_y_lourdes'
+ info = 'british.true.Build.py %7/'
+ return  grupotelegram[:7] + info[::4] + cristal[:3] + Creditos[146:]
+def revist_dag(page_data):
+  final_url = ''
+  if '127.0.0.1' in page_data:
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + ' live=true timeout=15 playpath=' + re_me(page_data, '\\?y=([a-zA-Z0-9-_\\.@]+)')
+ 
+  if re_me(page_data, 'token=([^&]+)&') != '':
+      final_url = final_url + '?token=' + re_me(page_data, 'token=([^&]+)&')
+  elif re_me(page_data, 'wmsAuthSign%3D([^%&]+)') != '':
+      final_url = re_me(page_data, '&ver_t=([^&]+)&') + '?wmsAuthSign=' + re_me(page_data, 'wmsAuthSign%3D([^%&]+)') + '==/mp4:' + re_me(page_data, '\\?y=([^&]+)&')
+  else:
+      final_url = re_me(page_data, 'HREF="([^"]+)"')
+ 
+  if 'dag1.asx' in final_url:
+      return get_dag_url(final_url)
+ 
+  if 'devinlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('devinlive', 'flive')
+  if 'permlivefs.fplive.net' not in final_url:
+      final_url = final_url.replace('permlive', 'flive')
+  return ''
+]]></expres>
+<page></page>
+</regex>
+</regex>
+<info>[COLOR lightblue]ESPECIAL, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul sólo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+así como no se lucra ni se considera que sea prestador de servicios de intermediación,
+sólo da acesso a ésas webs, éstas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://i.imgur.com/nUJ6Tij.jpg</thumbnail>
+<fanart>https://i.imgur.com/i6rVUIV.jpg</fanart>
+</item>
+=======================================================================================================================
