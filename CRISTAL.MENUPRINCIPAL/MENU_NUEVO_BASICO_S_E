@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+
+
+
+
+
+<items_info> 
+      <title>[COLOR lightskyblue]*^Cristal Azul^* V=3.0.6[/COLOR]</title> 
+      <genre>tv premium, deportes, cine, series y documentales</genre>
+      <description>[COLOR lightskyblue]addon cristal azul[/COLOR]</description>
+      <thumbnail>https://i.imgur.com/bg6n3AV.png</thumbnail>
+      <fanart>https://i.imgur.com/bg6n3AV.png</fanart>
+      <date>[COLOR red]tv premium, deportes, cine, series y documentales[/COLOR]</date>
+      <credits>picapau,lourdes,george,juan,supertopo,luisma,george</credits>
+    </items_info>
+
+
+
+
+
+
+
+
+
+<item>
+<title>$doregex[cristal_ultima_version][/COLOR]</title>
+<link>cristal</link>
+<regex>
+<name>repara_error_de_registro</name>
+<expres><![CDATA[#$pyFunction
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+import time
+def GetLSProData(page_data,Cookie_Jar,m):
+
+    xbmc.executebuiltin('PlayMedia("$doregex[mp3]",1)')
+    time.sleep( 1 )
+    return '$doregex[cristal_ultima_version]'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>cristal_ultima_version</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+ from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+ from datetime import datetime, date, time, timedelta
+ ultima_version = '$doregex[git-version]'
+ __addon__ = xbmcaddon.Addon('plugin.video.cristalazul')
+ version_interna = __addon__.getAddonInfo('version')
+ #version_interna = '3.0.3'
+ if ultima_version==version_interna:
+    formato = "%d/%m/20%y"
+    fecha = datetime.today()
+    return '[COLOR aqua]Addon Cristal Azul , actualizado: ' + fecha.strftime(formato)
+ elif not '.' in ultima_version:
+    return '[COLOR red]Le Bloquea Su Compañia\n[COLOR aqua]Le Ayudamos en telegram: @addonfestaycristal[/COLOR]'
+ else:
+    xbmc.executebuiltin('UpdateAddonRepos')
+    xbmc.executebuiltin('UpdateLocalAddons')
+    dialog = xbmcgui.Dialog()
+    dialog.textviewer('[COLOR aqua]CRISTAL AZUL[/COLOR]', '''[COLOR red]No Tiene Actualizado Cristal Azul:[/COLOR]
+
+[COLOR gold]-[COLOR white]Tiene que actualizar el addon, sino no le va a funcionar correctamente, su Version actual es la ''' + version_interna + ''' y la Ultima Version es la ''' + ultima_version + '''.
+[COLOR gold]-[COLOR white]Puede actualizarlo de cualquiera de estas maneras: 
+  1, desde el instalador LUAR.
+  2, ok largo sobre el addon Cristal Azul, informacion, versiones o actualizar, repositorio Cristal Azul y ok.
+  3, pincha en sistemas, addons, instalar desde repositorio, pulsacion larga en Cristal Azul, comprobar actualizaciones, addons de video, Cristala Azul, Actualizar.
+  4, Descargando el archivo zip desde el grupo de telegram, sistema, addons, instalar desde zip. 
+[/COLOR]
+[COLOR gold]-[COLOR white]Si no das con la tecla:[/COLOR]
+[COLOR white]Estamos en telegram: [COLOR gold]@addonfestaycristal[/COLOR]''')
+    return '[COLOR red]NO actualizado, Entre en el grupo de Telegram:\n[COLOR white]@addonfestaycristal [COLOR red] su V=' + version_interna + ' y la actual es ' + ultima_version
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>git-version</name>
+<expres>(?s)plugin.video.cristalazul.*?version="(.*?)"</expres>
+<page>https://raw.githubusercontent.com/picapaujulen/repositorio/master/Repositorio/addons.xml</page>
+<referer>https://github.com/</referer>
+ <agent>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0</agent>  
+ <cookiejar></cookiejar>
+</regex>
+<regex>
+<name>mp3</name>
+<expres>(.*?)CRISTALAZUL</expres>
+<page>https://pastebin.com/raw/q2W0RRZ2</page>
+</regex>
+<regex>
+<name>fecha</name>
+<expres><![CDATA[id="fecha">(.*?)<]]></expres>
+<page>http://www.fechadehoy.com/espana</page>
+</regex>
+<info>[COLOR lightblue]ACTUALIZADO, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+
+</item>
+
+
+
+
+
+
+
+
+
+<item>
+<title>[COLOR white]UNIVERSOS [COLOR yellow]STAR WARS[COLOR white]/[COLOR red]MARVEL[COLOR white]/[COLOR blue]Dc[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunctiona
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+import time
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      dialog = xbmcgui.Dialog()
+      ret = dialog.select('[COLOR white]Elige:[/COLOR]', ['[COLOR yellow]STAR WARS[/COLOR]', '[COLOR red]MARVEL[/COLOR]', '[COLOR blue]DC[/COLOR]'])
+      channels = ['star_wars', 'marvel', 'dc']
+      seleccion = channels[ret]
+      if 'marvel' in seleccion:
+          opcion = ["https://ia801400.us.archive.org/30/items/back.-in.-black/Back.In.Black.mp3", "https://ia801400.us.archive.org/30/items/back.-in.-black/Back.In.Black.mp3", "https://ia801400.us.archive.org/30/items/back.-in.-black/Back.In.Black.mp3"]
+          url = 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/ESPECIAL/universo_marvel'
+      elif 'star_wars' in seleccion:
+          opcion = ["https://ia801507.us.archive.org/25/items/star.-wars.-duel.of.-the.-fates.-epic.-version/STAR.WARS.Duel.of.The.Fates.EPIC.VERSION.mp3", "https://ia801404.us.archive.org/20/items/star.-wars.-guitar/STAR.WARS.Guitar.mp3", "https://ia601400.us.archive.org/12/items/star.-wars.-imperial.-march.-epic.-heroic.-version/STAR.WARS.Imperial.March.EPIC.HEROIC.VERSION.mp3", "https://ia801406.us.archive.org/18/items/star.-wars.-main.-theme.-epic.-cinematic.-emotional.-version/STAR.WARS.Main.Theme.EPIC.CINEMATIC.EMOTIONAL.VERSION.mp3", "https://ia801502.us.archive.org/19/items/star.-wars.-medley.-rock.-version/STAR.WARS.Medley.Rock.Version.mp3", "https://ia601506.us.archive.org/10/items/star.-wars.-the.-force.-theme.-emotional.-orchestral/STAR.WARS.The.Force.Theme.Emotional.Orchestral.mp3", "https://ia801405.us.archive.org/9/items/star.-wars.-the.-throne.-room.-a.-new.-hope.-guitar/STAR.WARS.The.Throne.Room.A.New.Hope.Guitar.mp3", "https://ia801508.us.archive.org/0/items/star.-wars.-throne.-room.-theme.-song/STAR.WARS.Throne.Room.Theme.Song.mp3", "https://ia801404.us.archive.org/4/items/star.-wars.-victory.-celebration.and.-main.-theme.-epic.-emotional.-version/STAR.WARS.Victory.Celebration.and.Main.Theme.EPIC.EMOTIONAL.VERSION.mp3", "https://ia801502.us.archive.org/4/items/the.-imperial.-march.-1980/The.Imperial.March.1980.mp3"]
+          url = 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/ESPECIAL/universo_star_wars'
+      else:
+          opcion = ["https://archive.org/download/saygrace.-suicide.-squad.-harley.-quinn/saygrace.-suicide.-squad.-harley.-quinn_vbr.m3u", "https://archive.org/download/batman.-1966.-main.-theme/batman.-1966.-main.-theme_vbr.m3u", "https://archive.org/download/batman.-1989.-main.-theme/batman.-1989.-main.-theme_vbr.m3u", "https://archive.org/download/ost.-superman/ost.-superman_vbr.m3u", "https://archive.org/download/wonder.-womans.-wrath/wonder.-womans.-wrath_vbr.m3u"]
+          url = 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/ESPECIAL/univero_dc'
+      try:
+          addon = xbmcaddon.Addon('plugin.video.cristalazul')
+          musica = addon.getSetting('Musica')
+          if musica == 'No':
+              pass
+          else:
+              azar = random.choice(opcion)
+              xbmc.executebuiltin('PlayMedia("{}",1)'.format(azar))
+      except:
+          azar = random.choice(opcion)
+          xbmc.executebuiltin('PlayMedia("{}",1)'.format(azar))
+      return url
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]UNIVERSOS, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://i.imgur.com/BKtvb91.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+
+
+
+
+
+
+ <item>
+<title>[COLOR white]TV PREMIUM[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[1]
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]TV PREMIUM, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/cfoGiFy.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+
+
+
+
+
+
+
+
+ <item>
+<title>[COLOR white]DEPORTES[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[2]
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://imgur.com/Hnx25PD.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]DEPORTES, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+<item>
+<title>[COLOR white]CINE[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[3]
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://imgur.com/wXqQw90.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]CINE, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+
+ 
+ 
+
+ <item>
+<title>[COLOR white]SERIES[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[4]
+]]></expres>
+<page></page>
+</regex>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<thumbnail>https://imgur.com/0w8vm9z.jpg</thumbnail>
+<info>[COLOR lightblue]SERIES, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+
+
+
+
+ <item>
+<title>[COLOR white]FESTA KIDS[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]$$LSProEncKey= $$</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[8]
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]FESTA KIDS, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/S0XJ5gz.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+
+<item>
+<title>[COLOR white]DISNEY + STAR[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[9]
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]FESTA KIDS, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/6WFBE1P.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+<item>
+<title>[COLOR white]CRISTAL LATINO[/COLOR]</title>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[5]
+]]></expres>
+<page></page>
+</regex>
+<link>na</link>
+<info>[COLOR lightblue]LATINO, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/GX535wX.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+
+
+
+
+<item>
+<title>[COLOR white]DOCUMENTALES[/COLOR]</title>
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[6]
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://imgur.com/tSxDo5c.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]DOCUMENTALES, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+
+
+
+<item>
+<title>[COLOR white]BUSCADOR YOUTUBE[/COLOR]</title>
+<link>$doregex[makelist]</link>
+<regex>
+ <name>makelist</name>
+<listrepeat><![CDATA[
+<title>[COLOR white][makelist.param3][/COLOR]</title>
+<link>$doregex[makelist5]</link>
+<thumbnail>https://i.ytimg.com/vi/[makelist.param1]/hqdefault.jpg</thumbnail>
+<fanart>https://i.ytimg.com/vi/[makelist.param1]/hqdefault.jpg</fanart>
+ ]]></listrepeat>
+<expres><![CDATA[videoRenderer":{"videoId":"(.*?)".*?"thumbnails":.{"url":"(.*?)".*?text":"(.*?)".*?simpleText":".*?simpleText":"(.*?)"]]></expres>
+<page>https://www.youtube.com/results?search_query=$doregex[buscador]</page>
+<referer>https://consent.youtube.com</referer>
+<agent>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</agent>
+<setcookie>CONSENT=YES+cb.20210706-13-p0.es+FX+816; YSC=qst-pfTicQs</setcookie>
+</regex>
+  <regex>
+<name>buscador</name>
+<expres><![CDATA[#$pyFunction
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+def GetLSProData(page_data,Cookie_Jar,m):
+    dialog = xbmcgui.Dialog()
+    d = dialog.input('[COLOR aqua]Cristal Azul[/COLOR] [COLOR red]Buscador Youtube[/COLOR] [COLOR white]Sin Api[/COLOR]', type=xbmcgui.INPUT_ALPHANUM).replace(" ", "+").replace("á", "a").replace("é", "e").replace("í", "i").replace("á", "a").replace("ú", "u")
+    return d
+]]></expres>
+<page></page>
+<cookiejar></cookiejar>
+</regex>
+<regex>
+<name>makelist5</name>
+<listrepeat><![CDATA[
+<title>$doregex[DASH]</title>
+<inputstream>[makelist5.param2]</inputstream>
+<thumbnail>https://i.ytimg.com/vi/[makelist.param1]/hqdefault.jpg</thumbnail>
+<fanart>https://i.ytimg.com/vi/[makelist.param1]/hqdefault.jpg</fanart>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+import youtube_resolver
+def GetLSProData(page_data,Cookie_Jar,m):
+ id_video = 'https://www.youtube.com/watch?v=[makelist.param1]'
+ items = youtube_resolver.resolve(id_video)
+ videos = []
+ for item in items:
+   title = item['title']
+   url = item['url']
+   videos.append((title, url))
+ return videos
+]]></expres>
+<page></page>
+</regex>
+ <regex>
+<name>DASH</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url='[makelist5.param1]'):#cPrLItsLTfakl
+
+  if 'DASH' in url:
+    return '[COLOR red]Enlace corrupto, use los otros enlaces[/COLOR]'
+  if '@' in '$doregex[calidades]':
+    return '[makelist.param4]     [COLOR gold]*^[/COLOR][COLOR white]Calidad Audio[/COLOR]'
+  else:
+    return '[makelist.param4]     [COLOR gold]*^[/COLOR][COLOR white]Calidad $doregex[calidades][/COLOR]'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>calidades</name>
+<expres><![CDATA[#$pyFunction
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='[makelist5.param1]'):
+        return re.findall('(.*?) ', url)[0]
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]BUSCADOR YOUTUBE, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/eP1x3az.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+
+
+
+
+
+
+<item>
+<title>[COLOR white]HERRAMIENTAS[/COLOR]</title>              
+<link>cristalazul</link>
+<externallink>$doregex[distancia]</externallink>
+<regex>
+<name>distancia</name>
+<expres><![CDATA[#$pyFunction
+import re
+from six.moves import urllib_request
+import six
+def GetLSProData(page_data,Cookie_Jar,m):
+      pasta = urllib_request.urlopen("http://bit.ly/cristal_menus_distancia").read()
+      #pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = six.ensure_str(pasta)
+      return re.findall('="(.*?)"', pasta)[7]
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://imgur.com/2lT0qfE.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]HERRAMIENTAS, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+
+
+
+<item>
+<title>[COLOR white]FAVORITOS KODI[/COLOR]</title>
+<link>https://www.tvaddons.ag/forums/$doregex[id]</link>
+<regex>
+<name>id</name>
+<expres>$pyFunction:xbmc.executebuiltin('ActivateWindow(10134)')</expres>
+<page></page>
+<notplayable>True</notplayable>
+</regex>
+<thumbnail>https://imgur.com/rneVWyQ.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]FAVORITOS KODI, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+</item>
+
+
+
+
+<item>
+<title>[COLOR white]TELEGRAM: [COLOR aqua]@addonfestaycristal[/COLOR]</title>
+<link>$doregex[makelist5]</link>
+<regex>
+<name>makelist5</name>
+<listrepeat><![CDATA[
+<title>$doregex[DASH]</title>
+<inputstream>[makelist5.param2]</inputstream>
+<thumbnail>https://i.ytimg.com/vi/UNQjWfwAzyM/hqdefault.jpg</thumbnail>
+<fanart>https://i.imgur.com/bg6n3AV.png</fanart>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+import youtube_resolver
+def GetLSProData(page_data,Cookie_Jar,m):
+ id_video = 'https://www.youtube.com/watch?v=UNQjWfwAzyM'
+ items = youtube_resolver.resolve(id_video)
+ videos = []
+ for item in items:
+   title = item['title']
+   url = item['url']
+   videos.append((title, url))
+ return videos
+]]></expres>
+<page></page>
+</regex>
+ <regex>
+<name>DASH</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url='[makelist5.param1]'):#cPrLItsLTfakl
+
+  if '@' in '$doregex[calidades]':
+    return ' '
+  else:
+    return 'video como hacer test [COLOR gold]*^[/COLOR][COLOR white]Calidad $doregex[calidades][/COLOR]'
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>calidades</name>
+<expres><![CDATA[#$pyFunction
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='[makelist5.param1]'):
+        return re.findall('(.*?) ', url)[0]
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://imgur.com/0eD3Wax.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+<info>[COLOR lightblue]REPARAR ERROR, 'CRISTAL AZUL'
+[COLOR red]
+"HAGA EL TEST DE DEPENDENCIAS"[/COLOR]</info>
+</item>    
+
+
+
+
+
+
+
+
+
+<item>
+<title>[COLOR gold]Informacion[/COLOR]</title>
+<link>$doregex[text]</link>
+<regex>
+<name>text</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+    import xbmcgui
+    dialog = xbmcgui.Dialog()
+    dialog.textviewer('[COLOR aqua]CRISTAL AZUL[/COLOR]', '[COLOR white]Recomendaciones Cristal Azul:[/COLOR]\n\n[COLOR lightskyblue]-[COLOR white]Si tiene este addon a traves de un wizards y le piden donar [COLOR red]NO DONEN,[/COLOR]\n[COLOR white]Éste proyecto es gratuito y RECHAZA las donaciones.[/COLOR]\n\n[COLOR lightskyblue]-[COLOR white]¿Le salta error de registro?[/COLOR]\n[COLOR lightskyblue][COLOR white]Recuerde que necesita éstos scrips/addons: Resolveurl, Horus(+acestream), youtube...[/COLOR]\n[COLOR white]Tenga siempre actualizadas éstas dependencias, gracias a todos ellos por su trabajo.[/COLOR]\n\n[COLOR lightskyblue]-[COLOR white]¿Y dónde conseguirlos actualizados?[/COLOR]\n[COLOR white]En nuestra fuente: [COLOR gold]http://kodileia.xyz[/COLOR]\n\n[COLOR lightskyblue]-[COLOR white]Que ésto todavía no me funciona:[/COLOR]\n[COLOR white]Estamos en telegram: [COLOR gold]https://t.me/addonfestaycristal [COLOR white]y en [COLOR gold]https://t.me/kodi18[/COLOR]\n\n\n\n\n\n\n\n\n                                                                                                                                                          [COLOR aqua]Cristal Azul[/COLOR]')
+]]></expres>
+<page></page>
+</regex>
+<info>[COLOR lightblue]INFORMACION, 'CRISTAL AZUL'
+[COLOR white]
+"Cristal azul solo contiene regex de webs que se encuentran en internet,
+este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
+asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
+solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
+<thumbnail>https://imgur.com/vJpjxMN.jpg</thumbnail>
+<fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
+</item>
+
+
+<!--cristalazulmolamucho-->
+
+
+
+
+</items>
