@@ -181,7 +181,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[1]
 ]]></expres>
@@ -219,7 +219,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[2]
 ]]></expres>
@@ -251,7 +251,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[3]
 ]]></expres>
@@ -287,7 +287,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[4]
 ]]></expres>
@@ -323,7 +323,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[8]
 ]]></expres>
@@ -354,7 +354,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[9]
 ]]></expres>
@@ -383,7 +383,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[5]
 ]]></expres>
@@ -418,7 +418,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[6]
 ]]></expres>
@@ -543,8 +543,8 @@ import re
 from six.moves import urllib_request
 import six
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = urllib_request.urlopen("http://bit.ly/cristal_menus_distancia").read()
-      #pasta = requests.get('https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = urllib_request.urlopen("https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia").read()
+      #pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[7]
 ]]></expres>
