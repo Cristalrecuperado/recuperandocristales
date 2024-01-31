@@ -107,7 +107,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 
 
 
-
+<!--
 
 <item>
 <title>[COLOR white]UNIVERSOS [COLOR yellow]STAR WARS[COLOR white]/[COLOR red]MARVEL[COLOR white]/[COLOR blue]Dc[/COLOR]</title>
@@ -161,11 +161,11 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
 
+-->
 
 
 
-
-
+<!--
 
 
  <item>
@@ -198,7 +198,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 </item>
 
 
-
+-->
 
 
 
@@ -308,7 +308,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 
 
 
-
+<!--
 
  <item>
 <title>[COLOR white]FESTA KIDS[/COLOR]</title>
@@ -339,8 +339,8 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
 
-
-
+-->
+<!--
 <item>
 <title>[COLOR white]DISNEY + STAR[/COLOR]</title>
 <link>cristalazul</link>
@@ -369,8 +369,8 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <thumbnail>https://imgur.com/6WFBE1P.jpg</thumbnail>
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
-
-
+-->
+<!--
 <item>
 <title>[COLOR white]CRISTAL LATINO[/COLOR]</title>
 <externallink>$doregex[distancia]</externallink>
@@ -399,12 +399,12 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <thumbnail>https://imgur.com/GX535wX.jpg</thumbnail>
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
+-->
 
 
 
 
-
-
+<!--
 <item>
 <title>[COLOR white]DOCUMENTALES[/COLOR]</title>
 <link>cristalazul</link>
@@ -433,7 +433,7 @@ este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
 asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
 solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
 </item>
-
+-->
 
 
 
@@ -544,7 +544,7 @@ from six.moves import urllib_request
 import six
 def GetLSProData(page_data,Cookie_Jar,m):
       pasta = urllib_request.urlopen("http://bit.ly/cristal_menus_distancia").read()
-      #pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      #pasta = requests.get('https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[7]
 ]]></expres>
