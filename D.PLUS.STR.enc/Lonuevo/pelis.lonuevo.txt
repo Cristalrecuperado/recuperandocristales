@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<item>
+<title>[COLOR deeppink]****** [COLOR orange] 14 Mayo [COLOR deeppink]******[/COLOR]</title>    
+<genre></genre>
+<year></year>  
+<thumbnail>https://i.imgur.com/EVdTp4H.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+<info></info>
+<urlsolve></urlsolve>
+</item>
+-----------------------------------------------------------------------------------------------------------
+
+<item>
+<title>[COLOR white]12 Trampas (Cast) [/COLOR][COLOR gold](2009)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/e/wtwunxm/'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Aventura,Drama</genre>
+<year>2009</year>  
+<thumbnail>https://i.imgur.com/OFPuMhR.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>El detective Danny Baxter (John Cena) está a punto de tener el peor día de su vida cuando un criminal y terrorista, Miles Jackson (Aiden Gillen), que se ha escapado de prisión tras haber sido detenido por Baxter, secuestra a su novia (Ashley Scott) y lo reta a 12 pruebas para salvarla en las calles de Nueva Orleans. </info>
+</item>
+
+<item>
+<title>[COLOR white]12 Trampas (Lat) [/COLOR][COLOR gold](2009)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/e/me0mnj3cy/'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Aventura,Drama</genre>
+<year>2009</year>  
+<thumbnail>https://i.imgur.com/OFPuMhR.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>El detective Danny Baxter (John Cena) está a punto de tener el peor día de su vida cuando un criminal y terrorista, Miles Jackson (Aiden Gillen), que se ha escapado de prisión tras haber sido detenido por Baxter, secuestra a su novia (Ashley Scott) y lo reta a 12 pruebas para salvarla en las calles de Nueva Orleans. </info>
+</item>
+-----------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]12 Trampas 2 (Cast) [/COLOR][COLOR gold](2013)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/e/md4x918zurwp8v/'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Aventura,Suspense</genre>
+<year>2013</year>  
+<thumbnail>https://i.imgur.com/1tOSzB2.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Nick Malloy (Randy Orton) da vida a un técnico de emergencias médicas (EMT), que se ve envuelto en un vengativo juego compuesto por 12 peligrosas trampas. Con poco tiempo disponible, el paramédico deberá salvar la vida de su mujer en este peligroso juego. Secuela de la película protagonizada en el año 2009 por John Cena. </info>
+</item>
+
+<item>
+<title>[COLOR white]12 Trampas 2 (Lat) [/COLOR][COLOR gold](2009)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/e/7rg7q94lhjm93r/'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Aventura,Suspense</genre>
+<year>2013</year>  
+<thumbnail>https://i.imgur.com/1tOSzB2.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Nick Malloy (Randy Orton) da vida a un técnico de emergencias médicas (EMT), que se ve envuelto en un vengativo juego compuesto por 12 peligrosas trampas. Con poco tiempo disponible, el paramédico deberá salvar la vida de su mujer en este peligroso juego. Secuela de la película protagonizada en el año 2009 por John Cena. </info>
+</item>
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+<item>
+<title>[COLOR deeppink]****** [COLOR orange] SEMANAS ANTERIORES [COLOR deeppink]******[/COLOR]</title>    
+<genre></genre>
+<year></year>  
+<thumbnail>https://i.imgur.com/EVdTp4H.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+<info></info>
+<urlsolve></urlsolve>
+</item>
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]Morgan (Cast) [/COLOR][COLOR gold](2016)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/embed-723xkyiox449.html'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Terror,Ficcion</genre>
+<year>2016</year>  
+<thumbnail>https://i.imgur.com/E9JNHcl.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Una compañía tecnológica crea una inteligencia artificial, sin ser conscientes de su verdadero potencial. Cuando las cosas comienzan a salirse de su control, deciden contratar a una especialista (Kate Mara) para determinar si acabar con la criatura o mantenerla encendida.</info>
+</item>
+-----------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]Morgan (Lat) [/COLOR][COLOR gold](2016)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/embed-b9uhxljrlewy.html'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Terror,Ficcion</genre>
+<year>2016</year>  
+<thumbnail>https://i.imgur.com/E9JNHcl.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Una compañía tecnológica crea una inteligencia artificial, sin ser conscientes de su verdadero potencial. Cuando las cosas comienzan a salirse de su control, deciden contratar a una especialista (Kate Mara) para determinar si acabar con la criatura o mantenerla encendida.</info>
+</item>
+-----------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]La llamada de lo salvaje (Cast) [/COLOR][COLOR gold](2020)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/84kvsa9py32k'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Drama,Aventura,Familia</genre>
+<year>1999</year>  
+<thumbnail>https://i.imgur.com/6BkJFPm.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Cuenta la historia vibrante de Buck, un perro grande y de buen corazón, un cruce entre un San Bernardo y un Scotch Collie, cuya despreocupada vida de ocio se alteró repentinamente cuando fue robado de su hogar en el condado de Santa Clara, California y llevado a Dawson City, Yukon, a fines de la década de 1890 durante la fiebre del oro, cuando los fuertes perros de trineo tenían una gran demanda. Como un recién llegado al servicio de entrega del equipo de perros, Buck está teniendo el momento de su vida. Obligado a luchar para sobrevivir, finalmente es llevado por su último propietario, John Thornton, a la proximidad del Círculo Polar Ártico, en algún lugar entre Yukon y Alaska, donde depende progresivamente de sus instintos primarios, se deshace de las comodidades de la civilización y responde "al llamado salvaje", convirtiéndose en su propio maestro.</info>
+</item>
+
+<item>
+<title>[COLOR white]La llamada de lo salvaje (Lat) [/COLOR][COLOR gold](2020)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/embed-ir6rxgkknmij.html'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Drama,Aventura,Familia</genre>
+<year>1999</year>  
+<thumbnail>https://i.imgur.com/6BkJFPm.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Cuenta la historia vibrante de Buck, un perro grande y de buen corazón, un cruce entre un San Bernardo y un Scotch Collie, cuya despreocupada vida de ocio se alteró repentinamente cuando fue robado de su hogar en el condado de Santa Clara, California y llevado a Dawson City, Yukon, a fines de la década de 1890 durante la fiebre del oro, cuando los fuertes perros de trineo tenían una gran demanda. Como un recién llegado al servicio de entrega del equipo de perros, Buck está teniendo el momento de su vida. Obligado a luchar para sobrevivir, finalmente es llevado por su último propietario, John Thornton, a la proximidad del Círculo Polar Ártico, en algún lugar entre Yukon y Alaska, donde depende progresivamente de sus instintos primarios, se deshace de las comodidades de la civilización y responde "al llamado salvaje", convirtiéndose en su propio maestro.</info>
+</item>
+-----------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]500 días juntos (Cast) [/COLOR][COLOR gold](2009)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/lsuqxb7opcnk'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Comedia,Drama,Romance</genre>
+<year>2009</year>  
+<thumbnail>https://i.imgur.com/TOeVI9L.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Tom aún sigue creyendo, incluso en este cínico mundo moderno, en la noción de un amor transformador, predestinado por el cosmos y que golpea como un rayo sólo una vez. Summer no cree lo mismo, para nada. La mecha se enciende desde el primer día, cuando Tom, un arquitecto en ciernes convertido en un sensiblero escritor de tarjetas de felicitación, se encuentra con Summer, la bella y fresca nueva secretaria de su jefe. Aunque aparentemente está fuera de su alcance, Tom pronto descubre que tienen un montón de cosas en común. La historia de Tom y Summer cubre desde el enamoramiento, las citas y el sexo hasta la separación, las recriminaciones y la redención, todo lo cual se suma al caleidoscópico retrato del por qué y el cómo seguimos esforzándonos de modo tan risible y rastrero para encontrar sentido al amor… y esperar convertirlo en realidad. </info>
+</item>
+
+<item>
+<title>[COLOR white]500 días juntos (Lat) [/COLOR][COLOR gold](2009)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/lsuqxb7opcnk'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Comedia,Drama,Romance</genre>
+<year>2009</year>  
+<thumbnail>https://i.imgur.com/TOeVI9L.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Tom aún sigue creyendo, incluso en este cínico mundo moderno, en la noción de un amor transformador, predestinado por el cosmos y que golpea como un rayo sólo una vez. Summer no cree lo mismo, para nada. La mecha se enciende desde el primer día, cuando Tom, un arquitecto en ciernes convertido en un sensiblero escritor de tarjetas de felicitación, se encuentra con Summer, la bella y fresca nueva secretaria de su jefe. Aunque aparentemente está fuera de su alcance, Tom pronto descubre que tienen un montón de cosas en común. La historia de Tom y Summer cubre desde el enamoramiento, las citas y el sexo hasta la separación, las recriminaciones y la redención, todo lo cual se suma al caleidoscópico retrato del por qué y el cómo seguimos esforzándonos de modo tan risible y rastrero para encontrar sentido al amor… y esperar convertirlo en realidad. </info>
+</item>
+
+
+
+<item>
+<title>[COLOR white]Sueños rotos (Castellano) [/COLOR][COLOR gold](1999)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/gwicuhwpehj0'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Drama</genre>
+<year>1999</year>  
+<thumbnail>https://i.imgur.com/8mGlbU1.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Para celebrar el fin de sus estudios secundarios, Alice (Claire Danes) y Darlene, su mejor amiga, (Kate Beckinsale), deciden hacer un exótico viaje. A sus padres les han dicho que se van a Hawaii, pero, en realidad, se van a Bangkok. Bajo el mágico y dorado sol de Tailandia, las dos amigas se divierten a lo grande. Pero tan idílica situación se complica cuando conocen a Nick (Daniel Lapaine), un guapo y seductor chico australiano del que se encaprichan las dos. Cuando Nick le pide a Darlene que pase la noche con él, la extrovertida Alice se siente celosa y resentida contra su amiga.</info>
+</item>
+-----------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]Retratos de una obsesión (Castellano) [/COLOR][COLOR gold](2002)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/5wiaxerbeuti'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Thriller,Intriga</genre>
+<year>2002</year>  
+<thumbnail>https://i.imgur.com/8mGlbU1.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Sy (Robin Williams) trabaja como dependiente en una tienda de revelado rápido de fotos en unos grandes almacenes. Es un hombre solitario, tranquilo y sensible, con un único defecto: necesita una familia a la que querer y cuidar. Ahora por fin la ha encontrado... y está dispuesto a hacer lo qué sea para mantenerla como a él le gusta. </info>
+</item>
+
+
+
+<item>
+<title>[COLOR white]Jovenes Emprendedores (Castellano) [/COLOR][COLOR gold](2021)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/f/rwqd8qj3a69keo'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Comedia,Familia,Aventura</genre>
+<year>1994</year>  
+<thumbnail>https://i.imgur.com/Xen7cqR.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>En una bonita mañana de verano, en un privilegiado suburbio de una gran ciudad, Baby Bink se dispone a comenzar su mañana como siempre suele hacer: su desayuno, un relajado baño y su libro de cuentos favoritos: "El bebé va de paseo". Pero la tranquila vida de Baby Bink se ve amenazada cuando es secuestrado por una banda de inteligentes ladrones que se hacen pasar por fotógrafos de niños. Los secuestradores pronto se darán cuenta de lo difícil que resulta cuidar de un bebé y, aunque no intencionadamente, Baby Bink se dispone a explorar la ciudad y esos sitios que tan bien conoce de su libro de cuentos. Los secuestradores pasarán por toda clase de aventuras y situaciones límites tratando de localizar al bebé que, inteligentemente, ha tomado un día libre. </info>
+</item>
+
+<item>
+<title>[COLOR white]Jovenes Emprendedores (Latino) [/COLOR][COLOR gold](2021)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.to/f/knx1qx60algxz4'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Comedia,Familia,Aventura</genre>
+<year>1994</year>  
+<thumbnail>https://i.imgur.com/Xen7cqR.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>En una bonita mañana de verano, en un privilegiado suburbio de una gran ciudad, Baby Bink se dispone a comenzar su mañana como siempre suele hacer: su desayuno, un relajado baño y su libro de cuentos favoritos: "El bebé va de paseo". Pero la tranquila vida de Baby Bink se ve amenazada cuando es secuestrado por una banda de inteligentes ladrones que se hacen pasar por fotógrafos de niños. Los secuestradores pronto se darán cuenta de lo difícil que resulta cuidar de un bebé y, aunque no intencionadamente, Baby Bink se dispone a explorar la ciudad y esos sitios que tan bien conoce de su libro de cuentos. Los secuestradores pasarán por toda clase de aventuras y situaciones límites tratando de localizar al bebé que, inteligentemente, ha tomado un día libre. </info>
+</item>
+-------------------------------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]Cuestión de pelotas [/COLOR][COLOR gold](2004)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://upstream.to/w8156wy8bb88'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Comedia,Familia,Aventura</genre>
+<year>2004</year>  
+<thumbnail>https://i.imgur.com/vMiSglk.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Peter LaFleur (Vince Vaughn), es el propietario del gimnasio Average Joe's, el cual está por quebrar. La clientela del gimnasio es muy escasa, y está compuesta por Steve "el Pirata", un hombre que se cree pirata; Justin Redman, un chico escuálido que sueña con impresionar a una animadora que está a años luz de sus posibilidades; Gordon Pibb, un hombre obeso aficionado a los deportes más raros; Owen, un joven sin muchas luces; y Dwight Baumgarten, un engreído sabiondo que en realidad no tiene ni idea de nada. Al humilde gimnasio de Peter, le echa el ojo White Goodman (Ben Stiller), estrella del mundo de los deportes y egocéntrico propietario del Globo Gym, el resplandeciente templo del fitness. </info>
+</item>
+
+-----------------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR white]Abraham Lincoln: cazador de vampiros (Castellano) [/COLOR][COLOR gold](2012)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://highstream.tv/36z3dt00cd8w.html'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Fantasia,Terror</genre>
+<year>2012</year>  
+<thumbnail>https://i.imgur.com/Yhyllq2.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Indiana, 1818. La luz de la luna cae a través de los densos bosques que rodean una cabaña, donde un niño de nueve años llamado Abraham Lincoln se arrodilla junto a la cama de su madre que sufre. Ella ha sido atacada por algo que los lugareños llaman "Enfermedad de la Leche". Mi niño... susurra antes de morir. Más tarde, el niño se da cuenta de que la enfermedad mortal de su madre era en realidad obra de un vampiro. A partir de ese momento, el niño comienza un diario, y se propone ser un maestro de la mente y el cuerpo, con un sólo objetivo: Emprender un camino de venganza que le llevará a la Casa Blanca.</info>
+</item>
+
+<item>
+<title>[COLOR white]Abraham Lincoln: cazador de vampiros (Latino) [/COLOR][COLOR gold](2012)[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://highstream.tv/2qj46swarlbi.html'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+<genre>Accion,Fantasia,Terror</genre>
+<year>2012</year>  
+<thumbnail>https://i.imgur.com/Yhyllq2.jpg</thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info>Indiana, 1818. La luz de la luna cae a través de los densos bosques que rodean una cabaña, donde un niño de nueve años llamado Abraham Lincoln se arrodilla junto a la cama de su madre que sufre. Ella ha sido atacada por algo que los lugareños llaman "Enfermedad de la Leche". Mi niño... susurra antes de morir. Más tarde, el niño se da cuenta de que la enfermedad mortal de su madre era en realidad obra de un vampiro. A partir de ese momento, el niño comienza un diario, y se propone ser un maestro de la mente y el cuerpo, con un sólo objetivo: Emprender un camino de venganza que le llevará a la Casa Blanca.</info>
+</item>
+
+
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+<item>
+<title>[COLOR deeppink]****** [COLOR orange] MARZO [COLOR deeppink]******[/COLOR]</title>    
+<genre></genre>
+<year></year>  
+<thumbnail>https://i.imgur.com/EVdTp4H.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+<info></info>
+<urlsolve></urlsolve>
+</item>
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+<item>
+<title>[COLOR white][/COLOR][COLOR gold]()[/COLOR]</title>  
+<link>$doregex[id3]</link>
+<regex>
+<name>id3</name>
+ 
+<expres><![CDATA[#$pyFunction
+ 
+def GetLSProData(page_data,Cookie_Jar,m):
+ 
+   import resolveurl
+ 
+   url = 'https://mixdrop.co/f/l67pz4opuqreoxq'
+ 
+   try:
+ 
+       u = resolveurl.resolve(url)
+ 
+   except:
+ 
+       u = ''
+ 
+   return u
+ 
+]]></expres>
+ 
+<page></page>
+ 
+</regex>
+<genre></genre>
+<year></year>  
+<thumbnail></thumbnail>
+<fanart>https://i.imgur.com/yNfc6m7.jpg</fanart>
+<info></info>
+</item>
+-------------------------------------------------------------------------------------------------------------------

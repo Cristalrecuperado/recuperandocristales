@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+
+
+<item>
+<title>[B][COLOR yellow]Grupo Telegram[COLOR white] @addonfestaycristal[/COLOR][/B]</title>
+<link>NOLINK</link>
+<thumbnail>https://i.imgur.com/TfN094h.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+</item>
+
+
+<item>
+<title>[B][COLOR gold]D+ STAR [COLOR white]Documentales Nat Geographic[/COLOR][/B]</title>
+<externallink>https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/D.PLUS.STR.enc/Nat.Geo/Docus.nat.geo.xml</externallink>
+<link>na</link>
+<thumbnail>https://i.imgur.com/Ni6IBNd.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+</item>
+
+
+<item>
+<title>[B][COLOR gold]D+ STAR [COLOR white]Series Nat Geographic[/COLOR][/B]</title>
+<externallink>https://raw.githubusercontent.com/FESTAKIDS/festakids/main/DPLUS/NATGEO/Series.natgeo.xml</externallink>
+<link>na</link>
+<thumbnail>https://i.imgur.com/Ni6IBNd.jpg</thumbnail>
+<fanart>https://i.imgur.com/skkYoSC.jpg</fanart>
+</item>
+
+
+</items>
