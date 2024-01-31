@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+
+
+<item>
+<title>[COLOR gold]*[/COLOR] [COLOR lightsalmon]Supercine [COLOR white]Drive (Necesario API Drive)[/COLOR]</title> 
+<link>http://ignorame</link>
+<externallink>https://pastebin.com/raw/hmg8EGw1</externallink>
+<thumbnail>https://i.imgur.com/TFYwyNw.jpg</thumbnail>
+<fanart>https://i.imgur.com/YJvk7cD.jpg</fanart>
+</item>
+
+
+<item>
+<title>[COLOR gold]*[/COLOR] [COLOR lightsalmon]Cine ElDesvan [COLOR white](Necesario API Drive)[/COLOR]</title>
+<link>$doregex[temas]</link>
+<regex>
+<name>temas</name>
+<listrepeat><![CDATA[
+<title>[COLOR gold][COLOR white][temas.param2][/COLOR]</title>
+<info>[temas.param2]</info>
+<link>$doregex[temas2]</link>
+<thumbnail>https://i.imgur.com/Q2PguWa.jpg</thumbnail>
+<fanart>http://www.arturogoga.com/wp-content/uploads/2009/12/image4.png</fanart>
+]]></listrepeat>
+<expres><![CDATA[dir='ltr' href='(.*?)'>(.*?)<]]></expres>
+<page>https://eldesvandelverdugo.blogspot.com/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>temas2</name>
+<listrepeat><![CDATA[
+<title>[COLOR gold][COLOR white][temas2.param2][/COLOR] [temas2.param5]</title>
+<info>
+[temas2.param4]
+[temas2.param5]
+[temas2.param6]
+[temas2.param7]
+[temas2.param8]
+[temas2.param14]
+[temas2.param16]
+[temas2.param17]
+</info>
+<link>$doregex[selecion_inteligente]</link>
+<thumbnail>[temas2.param3]</thumbnail>
+<fanart>[temas2.param3]</fanart>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+url = '[temas.param1]'
+def GetLSProData(page_data,Cookie_Jar,m,url=url):
+    import re,requests,resolveurl,base64
+    html = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': 'https://pastebin.com'}, verify=False).text
+    page = re.findall("pager-older-link' href='(.*?)'", html)[0].replace('&amp;','&').replace('max-results=20','max-results=200')
+    html2 = requests.get(page, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': 'https://pastebin.com'}, verify=False).text
+    return re.findall("(?s)<div class='post-outer'>.*?<a href='(.*?)'>(.*?)<.*?href=.(.*?)\".*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<.*?center.\">\n*(.*?)<", html+html2)
+]]></expres>
+<page></page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>temas3</name>
+<expres><![CDATA[#$pyFunction
+url = '[temas2.param1]'
+def GetLSProData(page_data,Cookie_Jar,m,url=url):
+    import re,requests,resolveurl,base64
+    html = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': 'https://pastebin.com'}, verify=False).text
+    return re.findall('<a href="(https://(?:mega|drive).*?)"', html)[0]
+]]></expres>
+<page></page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>selecion_inteligente</name>
+<expres><![CDATA[#$pyFunction
+url = '$doregex[temas3]'
+$doregex[importar]
+from resolveurl.plugins.lib import jsunpack
+$doregex[reparar_conectores]
+
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>reparar_conectores</name>
+<expres><![CDATA[#$pyFunction
+import base64;exec(base64.b64decode("aW1wb3J0IG1hcnNoYWw7ZXhlYyhtYXJzaGFsLmxvYWRzKGJhc2U2NC5iNjRkZWNvZGUoIll3QUFBQUFBQUFBQUFRQUFBRUFBQUFCekRRQUFBR1FBQUlRQUFGb0FBR1FCQUZNb0FnQUFBR01EQUFBQUJRQUFBQU1BQUFCREFBQUFjMEVBQUFCa0FRQmtBQUJzQUFCOUF3QmtBZ0JxQVFCa0F3Q0RBUUI5QkFCa0JBQnFBUUJrQXdDREFRQjlBQUI4QXdCcUFnQjhCQUI4QUFBWGd3RUFhZ01BZ3dBQVV5Z0ZBQUFBVG1uLy8vLy9jeFFBQUFCaFNGSXdZMGhOTmt4NU9XbGhXRkYxWWtoclBYUUdBQUFBWW1GelpUWTBjeUFBQUFCTU1FNTJZbTFXYW1SSE9YbGFXRTVtVVROS2NHTXpVbWhpUlVZMlpGZDNQU2dFQUFBQWRBY0FBQUIxY214c2FXSXlkQVlBQUFCa1pXTnZaR1YwQndBQUFIVnliRzl3Wlc1MEJBQUFBSEpsWVdRb0JRQUFBSFFSQUFBQVR6QlBNRTlQTUU4d01FOVBNREF3VHpCMEVRQUFBRTlQVDA4d1QwOVBNRTh3VHpCUE1FOHdkQkVBQUFCUFR6QXdNREF3TUU4d1QwOHdUekJQVDFJQkFBQUFkQkVBQUFCUE1FOVBUekF3TUU5UE1EQXdUMDlQTUNnQUFBQUFLQUFBQUFCekJnQUFBSE5qY21sd2RIUU1BQUFBUjJWMFRGTlFjbTlFWVhSaEFRQUFBSE1JQUFBQUFBRU1BUThCRHdGT0tBRUFBQUJTQ1FBQUFDZ0FBQUFBS0FBQUFBQW9BQUFBQUhNR0FBQUFjMk55YVhCMGRBZ0FBQUE4Ylc5a2RXeGxQZ0VBQUFCekFBQUFBQT09IikpKQ=="))
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>importar</name>
+<expres><![CDATA[#$pyFunction
+import base64;exec(base64.b64decode("aW1wb3J0IG1hcnNoYWw7ZXhlYyhtYXJzaGFsLmxvYWRzKGJhc2U2NC5iNjRkZWNvZGUoIll3QUFBQUFBQUFBQUFRQUFBRUFBQUFCekRRQUFBR1FBQUlRQUFGb0FBR1FCQUZNb0FnQUFBR01EQUFBQUNBQUFBQVlBQUFCREFBQUFjL1FBQUFCa0FRQmtBQUJzQUFCOUF3QmtBUUJrQUFCc0FRQjlCQUJrQVFCa0FBQnNBZ0I5QlFCa0FRQmtBQUJzQXdCOUJnQmtBUUJrQUFCc0JBQjlCd0JrQWdCOEJ3QnFCUUNEQUFCcUJnQmtBd0NEQVFCckJnQnlnUUI4QkFCcUJ3QmtCQUJrQlFCcEFnQmtCZ0JrQndBMlpBZ0FaQWtBTm1RS0FIUUlBSU1CQW1vSkFGTmtDd0I4QndCcUJRQ0RBQUJxQmdCa0F3Q0RBUUJyQmdCeXhnQjhCQUJxQndCa0JBQmtCUUJwQWdCa0JnQmtCd0EyWkFnQVpBa0FObVFLQUhRSUFJTUJBbW9KQUZOOEJBQnFCd0JrREFCa0JRQnBBZ0JrQmdCa0J3QTJaQWdBWkFrQU5tUUtBSFFJQUlNQkFtb0pBRk5rQUFCVEtBMEFBQUJPYWYvLy8vOTBDd0FBQUdOeWFYTjBZV3hoZW5Wc2RBSUFBQUJwWkhNaEFBQUFhSFIwY0hNNkx5OXdZWE4wWldKcGJpNWpiMjB2Y21GM0wycFFXbUZDUjFsT2RBY0FBQUJvWldGa1pYSnpjMGdBQUFCTmIzcHBiR3hoTHpVdU1DQW9WMmx1Wkc5M2N5Qk9WQ0EyTGpNN0lGZFBWelkwT3lCeWRqbzFOUzR3S1NCSFpXTnJieTh5TURFd01ERXdNU0JHYVhKbFptOTRMelUxTGpCekNnQUFBRlZ6WlhJdFFXZGxiblJ6RkFBQUFHaDBkSEJ6T2k4dmNHRnpkR1ZpYVc0dVkyOXRkQWNBQUFCU1pXWmxjbVZ5ZEFZQUFBQjJaWEpwWm5sMEJRQUFBR1psYzNSaGN5RUFBQUJvZEhSd2N6b3ZMM0JoYzNSbFltbHVMbU52YlM5eVlYY3ZSalJvZG1KcGVIa29DZ0FBQUhRQ0FBQUFjbVYwQ0FBQUFISmxjWFZsYzNSemRBSUFBQUJ2YzNRRUFBQUFlR0p0WTNRSkFBQUFlR0p0WTJGa1pHOXVkQVVBQUFCQlpHUnZiblFNQUFBQVoyVjBRV1JrYjI1SmJtWnZkQU1BQUFCblpYUjBCUUFBQUVaaGJITmxkQVFBQUFCMFpYaDBLQWdBQUFCMEVRQUFBRTh3VHpCUE1EQXdUekF3TURCUE1FOHdkQkVBQUFCUE1FOVBUekF3VHpBd1R6QXdUekJQVDNRUkFBQUFUMDlQVHpCUE1EQlBUMDlQTUU4d1R6QlNCZ0FBQUZJSEFBQUFVZ2dBQUFCU0NRQUFBRklLQUFBQUtBQUFBQUFvQUFBQUFITUdBQUFBYzJOeWFYQjBkQXdBQUFCSFpYUk1VMUJ5YjBSaGRHRUJBQUFBY3d3QUFBQUFBVHdCR3dFcUFSc0JLZ0pPS0FFQUFBQlNFd0FBQUNnQUFBQUFLQUFBQUFBb0FBQUFBSE1HQUFBQWMyTnlhWEIwZEFnQUFBQThiVzlrZFd4bFBnRUFBQUJ6QUFBQUFBPT0iKSkp"))
+]]></expres>
+<page></page>
+</regex>
+<thumbnail>https://i.imgur.com/Q2PguWa.jpg</thumbnail>
+<fanart>http://www.arturogoga.com/wp-content/uploads/2009/12/image4.png</fanart>
+</item>
+
+
+
+
+
+
+<item>
+<title>[COLOR gold]*[/COLOR] [COLOR lightsalmon]And The Oscar [COLOR white]Goes To... [COLOR red][/COLOR]</title>
+<link>http://Ignoreme</link>
+<jsonrpc>plugin://plugin.video.cristalazul/?fanart=https%3a%2f%2fi.imgur.com%2f3z5tAFE.jpg&amp;mode=1&amp;name=%5bCOLOR%20gold%5d%2a%5b%2fCOLOR%5d%20%5bCOLOR%20lightsalmon%5dAnd%20The%20Oscar%20%5bCOLOR%20white%5dGoes%20To...%5b%2fCOLOR%5d&amp;regexs=%7bu%27c%27%3a%20%7b%27expres%27%3a%20u%27%23%24pyFunction%5cr%5cnimport%20urllib%2c%20re%2c%20requests%2c%20xbmcgui%2c%20xbmc%2c%20xbmcaddon%2c%20time%5cr%5cnimport%20os%5cr%5cndef%20GetLSProData(page_data%2cCookie_Jar%2cm)%3a%5cr%5cn%5cr%5cn%20%20%20%20xbmc.executebuiltin(%5c%27PlayMedia(%22https%3a%2f%2farchive.org%2fdownload%2foscars.theme%2fOscars.Theme.mp3%22%2c1)%5c%27)%5cr%5cn%20%20%20%20time.sleep(%201%20)%5cr%5cn%20%20%20%20return%20%5c%27http%3a%2f%2fbit.ly%2fespeciallososcars%5c%27%5cr%5cn%27%2c%20%27name%27%3a%20u%27c%27%2c%20%27page%27%3a%20None%7d%2c%20u%27comecristal%27%3a%20%7b%27expres%27%3a%20u%27%23%24pyFunction%5cr%5cndef%20GetLSProData(page_data%2cCookie_Jar%2cm)%3a%5cr%5cn%20import%20xbmc%5cr%5cn%20import%20xbmcaddon%5cr%5cn%20addon%20%3d%20xbmcaddon.Addon(%5c%27plugin.video.cristalazul%5c%27)%5cr%5cn%20Url%20%3d%20%5c%27link%5b%3a%3a4%5d%20%2b%20url%5b%3a8%5d%20%2b%20Creditos%5b62%3a%5d%20%3d%20http%3a%2f%2fbit.ly%2fsourcecristalazul%5c%27%5cr%5cn%20grupotelegram%20%3d%20%5c%27http%3a%2f%2ft.me%2faddonfestaycristal%5c%27%5cr%5cn%20Creditos%20%3d%20%5c%27el_addon_cristalazul_fue_creado_por_el_grupo_festa_para_el_disfrute_en%20familia%2c%20este_addon_es_completamente_gratuito%2cdisfrute_de_la_seccion_de_tv_premium%5c%27%5cr%5cn%20cristal%20%3d%20%5c%27jdt_cristal_azul_para_todos_gratuita_creada_por_picapau_y_lourdes%5c%27%5cr%5cn%20info%20%3d%20%5c%27british.true.Build.py%20%257%2f%5c%27%5cr%5cn%20return%20%20grupotelegram%5b%3a7%5d%20%2b%20info%5b%3a%3a4%5d%20%2b%20cristal%5b%3a3%5d%20%2b%20Creditos%5b146%3a%5d%5cr%5cndef%20revist_dag(page_data)%3a%5cr%5cn%20%20final_url%20%3d%20%5c%27%5c%27%5cr%5cn%20%20if%20%5c%27127.0.0.1%5c%27%20in%20page_data%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20re_me(page_data%2c%20%5c%27%26ver_t%3d(%5b%5e%26%5d%2b)%26%5c%27)%20%2b%20%5c%27%20live%3dtrue%20timeout%3d15%20playpath%3d%5c%27%20%2b%20re_me(page_data%2c%20%5c%27%5c%5c%5c%5c%3fy%3d(%5ba-zA-Z0-9-_%5c%5c%5c%5c.%40%5d%2b)%5c%27)%5cr%5cn%20%5cr%5cn%20%20if%20re_me(page_data%2c%20%5c%27token%3d(%5b%5e%26%5d%2b)%26%5c%27)%20!%3d%20%5c%27%5c%27%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20final_url%20%2b%20%5c%27%3ftoken%3d%5c%27%20%2b%20re_me(page_data%2c%20%5c%27token%3d(%5b%5e%26%5d%2b)%26%5c%27)%5cr%5cn%20%20elif%20re_me(page_data%2c%20%5c%27wmsAuthSign%253D(%5b%5e%25%26%5d%2b)%5c%27)%20!%3d%20%5c%27%5c%27%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20re_me(page_data%2c%20%5c%27%26ver_t%3d(%5b%5e%26%5d%2b)%26%5c%27)%20%2b%20%5c%27%3fwmsAuthSign%3d%5c%27%20%2b%20re_me(page_data%2c%20%5c%27wmsAuthSign%253D(%5b%5e%25%26%5d%2b)%5c%27)%20%2b%20%5c%27%3d%3d%2fmp4%3a%5c%27%20%2b%20re_me(page_data%2c%20%5c%27%5c%5c%5c%5c%3fy%3d(%5b%5e%26%5d%2b)%26%5c%27)%5cr%5cn%20%20else%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20re_me(page_data%2c%20%5c%27HREF%3d%22(%5b%5e%22%5d%2b)%22%5c%27)%5cr%5cn%20%5cr%5cn%20%20if%20%5c%27dag1.asx%5c%27%20in%20final_url%3a%5cr%5cn%20%20%20%20%20%20return%20get_dag_url(final_url)%5cr%5cn%20%5cr%5cn%20%20if%20%5c%27devinlivefs.fplive.net%5c%27%20not%20in%20final_url%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20final_url.replace(%5c%27devinlive%5c%27%2c%20%5c%27flive%5c%27)%5cr%5cn%20%20if%20%5c%27permlivefs.fplive.net%5c%27%20not%20in%20final_url%3a%5cr%5cn%20%20%20%20%20%20final_url%20%3d%20final_url.replace(%5c%27permlive%5c%27%2c%20%5c%27flive%5c%27)%5cr%5cn%20%20return%20%5c%27%5c%27%5cr%5cn%27%2c%20%27name%27%3a%20u%27comecristal%27%2c%20%27page%27%3a%20None%7d%7d&amp;url=%24doregex%5bc%5d</jsonrpc>
+<thumbnail>https://i.imgur.com/sjVioN9.jpg</thumbnail>
+<fanart>https://i.imgur.com/RsLj1lh.jpg</fanart>
+</item>
+
+
