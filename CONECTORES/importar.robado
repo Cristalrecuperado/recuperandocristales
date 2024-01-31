@@ -1,0 +1,8 @@
+import xbmcgui,xbmcaddon,xbmc
+xbmcgui.Dialog().textviewer("""[COLOR aqua]CRISTAL AZUL[/COLOR]""", """El Addon:[COLOR red]
+""" + xbmcaddon.Addon().getAddonInfo('id') + """[/COLOR] 
+Está Robando Éste Contenido Al Addon Cristal Azul
+y Por Éste Motivo No Le Va a Funcionar
+Reporte Ésta Incidencia En El Grupo De Telegram: [COLOR aqua]@addonfestaycristal[/COLOR]""")
+
+"""

@@ -1,0 +1,150 @@
+<items>
+ <item>
+        <title>[COLOR gold]*[/COLOR] [COLOR lightsalmon]Pinche aqui realizaremos una busqueda de enlaces[/COLOR]</title>
+        <link>$doregex[link_final]</link>
+       <regex>
+            <name>link_final</name>
+            <listrepeat><![CDATA[
+<title>[COLOR white][link_final.param2] [link_final.param3] [link_final.param4] [/COLOR]</title>
+<link>$doregex[selecion_inteligente]</link>
+<thumbnail>[makelist2.param2]</thumbnail>
+<fanart>https://i.imgur.com/KFAuyll.jpg</fanart>
+]]></listrepeat>
+            <expres><![CDATA[#$pyFunction
+url = '[makelist2.param3]'
+import re,requests,base64,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+
+def GetLSProData(page_data,Cookie_Jar,m,url=url):
+
+  id = xbmcaddon.Addon().getAddonInfo('id')
+  if 'cristalazul' in id or 'festa' in id or 'streamspro' in id:
+    cookie_distancia = urllib_request.urlopen('https://pastebin.com/raw/A35dMZS1').read()
+    cookie_distancia = six.ensure_str(cookie_distancia)
+    patron = '(?s)href="(.*?)".*?src.*?>(.*?)<.*?>(.*?)<.*?languages/(.*?)[_\.]'
+    cookie = cookie_distancia.split('*')[random.randrange(len(cookie_distancia.split('*'))-1)]
+    response = requests.get(url+'/', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0','Cookie': cookie}).text
+    response = six.ensure_str(response)
+    data = re.findall(patron, response.split("linksUsers")[1].split("linksUsers")[0])
+    try:
+        enlaces_post = re.findall('(?s)playerItem.*?lang="(.*?)".*?Player="(.*?)".*?h3>(.*?)<.*?Calidad: (.*?)<', response)
+        lista_post = []
+        for item in enlaces_post:
+            if 'powvideo' in item[2] or 'waaw' in item[2] or 'streamplay' in item[2] or 'vidtodo' in item[2]:
+                url = ''
+            else:
+                lista_post += [(item[1], '[COLOR gold]E.Oficial '+item[2], item[3], item[0])]
+    except:
+        lista_post = []
+    data = lista_post + data
+    videos = []
+    for item in data:
+      if 'powvideo' in item[1] or 'waaw' in item[1] or 'streamplay' in item[1] or 'vidtodo' in item[1]:
+          url = ''
+      else:
+          url = item[0]
+          servidor = item[1]
+          calidad = item[2]
+          idioma = item[3]
+          videos += [(url, servidor, calidad, idioma)]
+    numero_total = len(videos)
+    return [('http', ' ', ' ', '[COLOR aqua]Cristal Azul Resultados links: [COLOR white] ('+str(numero_total)+')')] + videos + [('http', ' ', ' ', '[COLOR white]No hay mas resultados...')]
+  else:
+    xbmc.executebuiltin('PlayMedia("https://www.ivoox.com/listen_mn_23681872_1.m4a?internal=HTML5",1)')
+    return xbmc.executebuiltin("XBMC.Notification([COLOR aqua]Cristal Azul [/COLOR],[COLOR gold] robado a cristal azul[/COLOR], 25000)")
+]]></expres>
+            <page></page>
+        </regex>
+        <regex>
+            <name>link_final_total</name>
+            <expres><![CDATA[#$pyFunction
+url = '[link_final.param1]'
+referer = '[makelist2.param3]'
+import re,requests,base64,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+
+def GetLSProData(page_data,Cookie_Jar,m,url=url,referer=referer):
+
+  if 'http' in url:
+    return url
+  else:
+    cookie_distancia = urllib_request.urlopen('https://pastebin.com/raw/A35dMZS1').read()
+    cookie_distancia = six.ensure_str(cookie_distancia )
+    patron = "src='(.*?)'"
+    data = "------WebKitFormBoundaryOoOIK5GVbe9NzOCE\r\nContent-Disposition: form-data; name=\"_method\"\r\n\r\ngetPlayer\r\n------WebKitFormBoundaryOoOIK5GVbe9NzOCE\r\nContent-Disposition: form-data; name=\"id\"\r\n\r\n" + url + "\r\n------WebKitFormBoundaryOoOIK5GVbe9NzOCE\r\nContent-Disposition: form-data; name=\"width\"\r\n\r\n601\r\n------WebKitFormBoundaryOoOIK5GVbe9NzOCE\r\nContent-Disposition: form-data; name=\"height\"\r\n\r\n540\r\n------WebKitFormBoundaryOoOIK5GVbe9NzOCE--\r\n"
+    try:
+        cookie = cookie_distancia.split('*')[random.randrange(len(cookie_distancia.split('*'))-1)]
+        #response = requests.post('https://playdede.com/ajax.php', headers={'authority': 'playdede.com', 'pragma': 'no-cache', 'cache-control': 'no-cache', 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryOoOIK5GVbe9NzOCE', 'accept': '*/*', 'origin': 'https://playdede.com', 'sec-fetch-site': 'same-origin', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': referer, 'accept-language': 'es-ES,es;q=0.9', 'cookie': cookie}, data=data).text
+        response = requests.get('https://playdede.com/embed.php?id='+url+'&width=601&height=540', headers={'authority': 'playdede.com', 'pragma': 'no-cache', 'cache-control': 'no-cache', 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryOoOIK5GVbe9NzOCE', 'accept': '*/*', 'origin': 'https://playdede.com', 'sec-fetch-site': 'same-origin', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': referer, 'accept-language': 'es-ES,es;q=0.9', 'cookie': cookie}).text
+        response = six.ensure_str(response)
+        url_post = re.findall(patron, response)[0]
+    except:
+        response = 'NADA_LOGUEO'
+    contador = 0
+    while 'NADA_LOGUEO' in response or 'Cloudflare Ray ID:' in response or 'Olvidaste tu contrase' in response:
+        try:
+            cookie = cookie_distancia.split('*')[random.randrange(len(cookie_distancia.split('*'))-1)]
+            response = requests.post('https://playdede.com/ajax.php', headers={'authority': 'playdede.com', 'pragma': 'no-cache', 'cache-control': 'no-cache', 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryOoOIK5GVbe9NzOCE', 'accept': '*/*', 'origin': 'https://playdede.com', 'sec-fetch-site': 'same-origin', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': referer, 'accept-language': 'es-ES,es;q=0.9', 'cookie': cookie}, data=data).text
+            response = six.ensure_str(response)
+            url_post = re.findall(patron, response)[0]
+        except:
+            response = 'NADA_LOGUEO'
+        contador += 1
+        if 10 == contador:
+            break
+    ArchivoDestino = TRANSLATEPATH('special://home/addons/plugin.video.cristalazul/')
+    open(ArchivoDestino + 'html.txt','wb').write(six.ensure_binary(cookie+'*'+str(contador)+'*'+response+':::'+url_post.replace('\/', '/')))
+    return url_post.replace('\/', '/')
+]]></expres>
+            <page></page>
+        </regex>
+<regex>
+<name>selecion_inteligente</name>
+<expres><![CDATA[#$pyFunction
+url = '$doregex[link_final_total]'
+import re,requests,resolveurl,cfscrape,six
+from kodi_six import xbmc,xbmcaddon,xbmcgui
+from six.moves import urllib_parse
+from resources.lib.megaserver import Client
+from resolveurl.plugins.lib import jsunpack
+$doregex[reparar_conectores]
+
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>reparar_conectores</name>
+<expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
+def GetLSProData(page_data,Cookie_Jar,m):
+    pasta = requests.get('https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CONECTORES/conector.a.distancia.definitivo', verify=False).text
+    return six.ensure_str(pasta)
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>importar</name>
+<expres><![CDATA[#$pyFunction
+import base64;exec(base64.b64decode("aW1wb3J0IG1hcnNoYWw7ZXhlYyhtYXJzaGFsLmxvYWRzKGJhc2U2NC5iNjRkZWNvZGUoIll3QUFBQUFBQUFBQUFRQUFBRUFBQUFCekRRQUFBR1FBQUlRQUFGb0FBR1FCQUZNb0FnQUFBR01EQUFBQUNRQUFBQVlBQUFCREFBQUFjODBBQUFCa0FRQmtBQUJzQUFCOUF3QmtBUUJrQUFCc0FRQjlCQUJrQVFCa0FBQnNBZ0I5QlFCa0FRQmtBQUJzQXdCOUJnQmtBUUJrQUFCc0JBQjlCd0I4QndCcUJRQ0RBQUJxQmdCa0FnQ0RBUUI5Q0FCa0F3QjhDQUJyQmdCemRRQmtCQUI4Q0FCckJnQnpkUUJrQlFCOENBQnJCZ0J5bndCOEJBQnFCd0JrQmdCa0J3QnBBZ0JrQ0FCa0NRQTJaQW9BWkFzQU5tUU1BSFFJQUlNQkFtb0pBRk44QkFCcUJ3QmtEUUJrQndCcEFnQmtDQUJrQ1FBMlpBb0FaQXNBTm1RTUFIUUlBSU1CQW1vSkFGTmtBQUJUS0E0QUFBQk9hZi8vLy85MEFnQUFBR2xrZEFzQUFBQmpjbWx6ZEdGc1lYcDFiSFFGQUFBQVptVnpkR0YwQ0FBQUFFWjFjMmx2YmxSMmMyWUFBQUJvZEhSd2N6b3ZMM0poZHk1bmFYUm9kV0oxYzJWeVkyOXVkR1Z1ZEM1amIyMHZRM0pwYzNSaGJHRjZkV3d2UTNKcGMzUmhiR0Y2ZFd3dWFXOHZiV0ZwYmk5RFQwNUZRMVJQVWtWVEwwbHRjRzl5ZEdGeUxtVnVkR1Z5Ynk1a2FYTjBZVzVrYVdGMEJ3QUFBR2hsWVdSbGNuTnpTQUFBQUUxdmVtbHNiR0V2TlM0d0lDaFhhVzVrYjNkeklFNVVJRFl1TXpzZ1YwOVhOalE3SUhKMk9qVTFMakFwSUVkbFkydHZMekl3TVRBd01UQXhJRVpwY21WbWIzZ3ZOVFV1TUhNS0FBQUFWWE5sY2kxQloyVnVkSE1TQUFBQWFIUjBjSE02THk5bmFYUm9kV0l1WTI5dGRBY0FBQUJTWldabGNtVnlkQVlBQUFCMlpYSnBabmx6WEFBQUFHaDBkSEJ6T2k4dmNtRjNMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5RGNtbHpkR0ZzWVhwMWJDOURjbWx6ZEdGc1lYcDFiQzVwYnk5dFlXbHVMME5QVGtWRFZFOVNSVk12YVcxd2IzSjBZWEl1Y205aVlXUnZLQW9BQUFCMEFnQUFBSEpsZEFnQUFBQnlaWEYxWlhOMGMzUUNBQUFBYjNOMEJBQUFBSGhpYldOMENRQUFBSGhpYldOaFpHUnZiblFGQUFBQVFXUmtiMjUwREFBQUFHZGxkRUZrWkc5dVNXNW1iM1FEQUFBQVoyVjBkQVVBQUFCR1lXeHpaWFFFQUFBQWRHVjRkQ2dKQUFBQWRBa0FBQUJ3WVdkbFgyUmhkR0YwQ2dBQUFFTnZiMnRwWlY5S1lYSjBBUUFBQUcxU0J3QUFBRklJQUFBQVVna0FBQUJTQ2dBQUFGSUxBQUFBVWdBQUFBQW9BQUFBQUNnQUFBQUFjd1lBQUFCelkzSnBjSFIwREFBQUFFZGxkRXhUVUhKdlJHRjBZUUVBQUFCekNnQUFBQUFCUEFFVkFTUUJLZ0pPS0FFQUFBQlNGQUFBQUNnQUFBQUFLQUFBQUFBb0FBQUFBSE1HQUFBQWMyTnlhWEIwZEFnQUFBQThiVzlrZFd4bFBnRUFBQUJ6QUFBQUFBPT0iKSkp"))
+]]></expres>
+<page></page>
+</regex>
+        <thumbnail>https://i.imgur.com/r6aXooD.jpg</thumbnail>
+        <fanart>https://i.imgur.com/gPpqFAT.jpg</fanart>
+    </item>
+
+
+
+
+
+
+</items>

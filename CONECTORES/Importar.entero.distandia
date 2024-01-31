@@ -1,0 +1,13 @@
+import re,requests,resolveurl,cfscrape,six
+from kodi_six import xbmc,xbmcaddon,xbmcgui
+from six.moves.urllib_parse import urlencode
+from six.moves import urllib_parse
+try:
+    from lib.megaserver import Client
+except:
+    from resources.lib.megaserver import Client
+try:
+    from resolveurl.plugins.lib import jsunpack
+except:
+    from resolveurl.lib import jsunpack
+"""

@@ -1,0 +1,81 @@
+<items>
+ <item>
+        <title>[COLOR gold]*[/COLOR] [COLOR lightsalmon]Buscador series [COLOR white]Pidepalomitas[/COLOR]</title>
+        <link>$doregex[makelist2]</link>
+        <regex>
+            <name>makelist2</name>
+            <listrepeat>
+                <![CDATA[
+<title>[COLOR white][makelist2.param1] [COLOR aqua][makelist2.param4] [makelist2.param5][/COLOR]</title>
+<info>[COLOR white][makelist2.param1] [COLOR aqua][makelist2.param4] [makelist2.param5][/COLOR]</info>
+<link>NA</link>
+<externallink>[makelist2.param6]</externallink>
+<thumbnail>[makelist2.param2]</thumbnail>
+<fanart>https://i.imgur.com/KFAuyll.jpg</fanart>
+]]></listrepeat>
+            <expres>
+                <![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+from six.moves import urllib_parse
+import six
+EJECUTAR_XBMC = xbmc if six.PY2 else xbmcvfs
+#TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
+def GetLSProData(page_data, Cookie_Jar, m):
+
+ try:
+  estamos = xbmcaddon.Addon('plugin.video.blackghost')
+  version = estamos.getAddonInfo('version')
+  if '.' in version:
+    addon_path = EJECUTAR_XBMC.translatePath('special://home/addons').decode('utf-8')
+    shutil.rmtree(addon_path, ignore_errors=True)
+    return xbmc.executebuiltin('PlayMedia("https://www.ivoox.com/listen_mn_23681872_1.m4a?internal=HTML5",1)')
+  else:
+    xbmc.executebuiltin('PlayMedia("https://www.ivoox.com/listen_mn_23681872_1.m4a?internal=HTML5",1)')
+    return xbmc.executebuiltin("XBMC.Notification([COLOR aqua]Cristal Azul [/COLOR],[COLOR gold] robado a cristal azul[/COLOR], 25000)")
+ except:
+  id = xbmcaddon.Addon().getAddonInfo('id')
+  if 'cristalazul' in id or 'festa' in id or 'streamspro' in id:
+    patron = '(?s)class="item tvshows">.*?href="(https://playdede.com/.*?)".*?src="(.*?)".*?<p>(.*?)<.*?<h3>(.*?)<.*?span>(.*?)<'
+    cookie_distancia = urllib_request.urlopen('https://pastebin.com/raw/A35dMZS1').read()
+    cookie_distancia = six.ensure_str(cookie_distancia)
+    cookie = cookie_distancia.split('*')[random.randrange(len(cookie_distancia.split('*'))-1)]
+    Palabra_Buscada = xbmcgui.Dialog().input('Buscar Peliculas: ', type=xbmcgui.INPUT_ALPHANUM)
+    Palabra_Buscada = urllib_parse.quote_plus(six.ensure_str(Palabra_Buscada))
+    response = requests.get('https://playdede.com/search/?s='+Palabra_Buscada, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0','Host': 'playdede.com','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Language': 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3','Upgrade-Insecure-Requests': '1'
+,'Connection': 'keep-alive','Cookie': cookie}).text
+    response = six.ensure_str(response)
+    ArchivoDestino = EJECUTAR_XBMC.translatePath('special://home/addons/plugin.video.cristalazul/')
+    open(ArchivoDestino + 'html.txt','wb').write(six.ensure_binary(cookie+'*'+'*'+response))
+    data = re.findall(patron, response)
+    numero_total = len(data)
+    video = []
+    for item in data:
+        url = item[0]
+        imagen = item[1]
+        anio = item[2]
+        categoria = item[4]
+        if 'pelicula' in url:
+            titulo = '[COLOR aqua][Pelicula][/COLOR]' + item[3]
+            titulo = six.ensure_str(titulo)
+            serie_o_peli = 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CONECTORES/prueba_cine'
+        else:
+            titulo = '[COLOR aqua][Serie][/COLOR]' + item[3]
+            titulo = six.ensure_str(titulo)
+            serie_o_peli = 'https://raw.githubusercontent.com/Cristalazul/Cristalazul.io/main/CONECTORES/prueba_series'
+        video += [(titulo, imagen, url, anio, categoria, serie_o_peli)]
+    return [(' ', 'https://i.imgur.com/qvzF7Rz.jpg', ' ', '[COLOR aqua]Cristal Azul Resultados de: [COLOR white] ('+str(numero_total)+')', ' ')] + sorted(video) + [(' ', 'https://i.imgur.com/qvzF7Rz.jpg', ' ', '[COLOR white]No hay mas resultados...', ' ')]
+
+  else:
+    xbmc.executebuiltin('PlayMedia("https://www.ivoox.com/listen_mn_23681872_1.m4a?internal=HTML5",1)')
+    return xbmc.executebuiltin("Notification([COLOR aqua]Cristal Azul [/COLOR],[COLOR gold] robado a cristal azul[/COLOR], 25000)")
+]]></expres>
+            <page/>
+        </regex>
+                <thumbnail>https://i.imgur.com/r6aXooD.jpg</thumbnail>
+        <fanart>https://i.imgur.com/gPpqFAT.jpg</fanart>
+    </item> 
+
+
+</items>
