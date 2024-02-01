@@ -678,7 +678,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>
 
-
+<!--
 
 <item>
 <title>[COLOR gold]*[/COLOR] [COLOR aqua]Especial [COLOR white]The Last Of Us[/COLOR]</title>     
@@ -717,7 +717,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>
 
-
+-->
 
 
 <!--
@@ -1106,7 +1106,7 @@ eval(compile(base64.b64decode(eval('\x6e\x65\x6f')),'<string>','exec'))
 
 
 
-
+<!--
 
 <item>
 <title>[COLOR gold]* [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
@@ -1116,7 +1116,7 @@ eval(compile(base64.b64decode(eval('\x6e\x65\x6f')),'<string>','exec'))
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>
 	
-
+-->
 
 
 
@@ -2135,7 +2135,15 @@ eval(compile(base64.b64decode(eval('\x6e\x65\x6f')),'<string>','exec'))
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>	
 
-	
+
+
+<item>
+<title>[COLOR gold]...  [/COLOR][/COLOR]</title>
+<link>cristalazul</link>
+<externallink>https://raw.githubusercontent.com/staffcf/canto/main/PANDERETA/0Menu.txt</externallink>
+<thumbnail>https://i.imgur.com/jPXMVsw.jpg</thumbnail>
+<fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
+</item>	
 
 
 </items>
