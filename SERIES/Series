@@ -462,11 +462,15 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <page></page>
 </regex>
 <regex>
-<name>importarlo</name>
+<name>importar</name>
 <expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
 def GetLSProData(page_data,Cookie_Jar,m):
-  import requests
-  return requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CONECTORES/Importar.entero.distandia', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': 'https://github.com'}, verify=False).text
+    pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CONECTORES/Importar.entero.distandia', verify=False).text
+    return six.ensure_str(pasta)
 ]]></expres>
 <page></page>
 </regex>
@@ -658,11 +662,15 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <page></page>
 </regex>
 <regex>
-<name>importarlo</name>
+<name>importar</name>
 <expres><![CDATA[#$pyFunction
+import re,requests,base64,shutil,random
+from kodi_six import xbmc,xbmcgui,xbmcaddon,xbmcvfs
+from six.moves import urllib_request
+import six
 def GetLSProData(page_data,Cookie_Jar,m):
-  import requests
-  return requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CONECTORES/Importar.entero.distandia', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0', 'Referer': 'https://github.com'}, verify=False).text
+    pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CONECTORES/Importar.entero.distandia', verify=False).text
+    return six.ensure_str(pasta)
 ]]></expres>
 <page></page>
 </regex>
