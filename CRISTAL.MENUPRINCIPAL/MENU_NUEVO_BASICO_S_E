@@ -6,7 +6,7 @@
 
 
 <items_info> 
-      <title>[COLOR lightskyblue]*^Cristal Azul^* V=3.0.6[/COLOR]</title> 
+      <title>[COLOR lightskyblue]*^Cristal Azul^* V=3.0.7[/COLOR]</title> 
       <genre>tv premium, deportes, cine, series y documentales</genre>
       <description>[COLOR lightskyblue]addon cristal azul[/COLOR]</description>
       <thumbnail>https://i.imgur.com/bg6n3AV.png</thumbnail>
@@ -107,7 +107,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 
 
 
-
+<!--
 
 <item>
 <title>[COLOR white]UNIVERSOS [COLOR yellow]STAR WARS[COLOR white]/[COLOR red]MARVEL[COLOR white]/[COLOR blue]Dc[/COLOR]</title>
@@ -161,11 +161,11 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
 
+-->
 
 
 
-
-
+<!--
 
 
  <item>
@@ -181,7 +181,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[1]
 ]]></expres>
@@ -198,7 +198,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 </item>
 
 
-
+-->
 
 
 
@@ -219,7 +219,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[2]
 ]]></expres>
@@ -251,7 +251,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[3]
 ]]></expres>
@@ -271,8 +271,8 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 
 
 
- 
- 
+
+
 
  <item>
 <title>[COLOR white]SERIES[/COLOR]</title>
@@ -287,7 +287,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[4]
 ]]></expres>
@@ -308,7 +308,7 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 
 
 
-
+<!--
 
  <item>
 <title>[COLOR white]FESTA KIDS[/COLOR]</title>
@@ -323,7 +323,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[8]
 ]]></expres>
@@ -339,8 +339,8 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
 
-
-
+-->
+<!--
 <item>
 <title>[COLOR white]DISNEY + STAR[/COLOR]</title>
 <link>cristalazul</link>
@@ -354,7 +354,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[9]
 ]]></expres>
@@ -369,8 +369,8 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <thumbnail>https://imgur.com/6WFBE1P.jpg</thumbnail>
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
-
-
+-->
+<!--
 <item>
 <title>[COLOR white]CRISTAL LATINO[/COLOR]</title>
 <externallink>$doregex[distancia]</externallink>
@@ -383,7 +383,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[5]
 ]]></expres>
@@ -399,12 +399,12 @@ solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR
 <thumbnail>https://imgur.com/GX535wX.jpg</thumbnail>
 <fanart>https://i.imgur.com/Byq4oSp.jpg</fanart>
 </item>
+-->
 
 
 
 
-
-
+<!--
 <item>
 <title>[COLOR white]DOCUMENTALES[/COLOR]</title>
 <link>cristalazul</link>
@@ -418,7 +418,7 @@ from six.moves import urllib_request
 import six
 TRANSLATEPATH = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[6]
 ]]></expres>
@@ -433,7 +433,7 @@ este addon no se apropia, copia, ni distribuye contenido con derechos de autor,
 asi como no se lucra ni se considera que sea prestador de servicios de intermediacion,
 solo da acesso a esas webs, estas son las responsables de los contenidos"[/COLOR]</info>
 </item>
-
+-->
 
 
 
@@ -543,8 +543,8 @@ import re
 from six.moves import urllib_request
 import six
 def GetLSProData(page_data,Cookie_Jar,m):
-      pasta = urllib_request.urlopen("http://bit.ly/cristal_menus_distancia").read()
-      #pasta = requests.get('http://bit.ly/cristal_menus_distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
+      pasta = urllib_request.urlopen("https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia").read()
+      #pasta = requests.get('https://raw.githubusercontent.com/Cristalrecuperado/recuperandocristales/main/CRISTAL.MENUPRINCIPAL/menu.cristal.distancia', headers={'User-Agent': 'Mozilla/5.0'}).text
       pasta = six.ensure_str(pasta)
       return re.findall('="(.*?)"', pasta)[7]
 ]]></expres>
