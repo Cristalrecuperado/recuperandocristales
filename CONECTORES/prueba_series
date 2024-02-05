@@ -8,24 +8,6 @@
 
 
 
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<items>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <item>
 <title>[COLOR gold]* [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
@@ -259,17 +241,10 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <thumbnail>https://i.imgur.com/jPXMVsw.jpg</thumbnail>
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>
-	</item>
 
 
 
 
-
-
-
-
-
-</items>
 
 
 
@@ -510,7 +485,6 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <thumbnail>https://i.imgur.com/jPXMVsw.jpg</thumbnail>
 <fanart>https://i.imgur.com/qNos9Dt.jpg</fanart>
 </item>
-	</item>
 
 
 
