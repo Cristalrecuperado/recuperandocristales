@@ -18,7 +18,7 @@
 
 
 <item>
-<title>[COLOR gold]*2 [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
+<title>[COLOR gold]*5 [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
 <link>$doregex[c]</link>
 <regex>
 <name>c</name>
@@ -47,13 +47,11 @@ def GetLSProData(page_data,Cookie_Jar,m):
     except:
       xbmc.executebuiltin("XBMC.Notification([COLOR aqua]Cristal Azul [/COLOR],[COLOR gold]Imposible Conectar Con Base de Datos[/COLOR], 15000)")
       return [('[COLOR red]No Se Puede Acceder a la base...[COLOR white]', ' ', 'NO ES POSIBLE CONECTAR CON LA BASE DE DATOS', 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')] + [('[COLOR aqua]Solucion en Telegram: [COLOR white]@addonfestaycristal', ' ', ' ', 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')]
-    buscador = xbmcgui.Dialog().input('Buscar Serie..: ', type=xbmcgui.INPUT_ALPHANUM)
-    buscador = six.ensure_str(buscador)
 
     dialog = xbmcgui.Dialog()
     ret = dialog.select('[COLOR gold]Elige Opcion[/COLOR]', ['[COLOR white]Todas (Tarda En Cargar)[/COLOR]', '[COLOR white](0-9)[/COLOR]', '[COLOR white]A[/COLOR]', '[COLOR white]B[/COLOR]', '[COLOR white]C[/COLOR]', '[COLOR white]D[/COLOR]', '[COLOR white]E[/COLOR]', '[COLOR white]F[/COLOR]', '[COLOR white]G[/COLOR]', '[COLOR white]H[/COLOR]', '[COLOR white]I[/COLOR]', '[COLOR white]J[/COLOR]', '[COLOR white]K[/COLOR]', '[COLOR white]L[/COLOR]', '[COLOR white]M[/COLOR]', '[COLOR white]N[/COLOR]', '[COLOR white]O[/COLOR]', '[COLOR white]P[/COLOR]', '[COLOR white]Q[/COLOR]', '[COLOR white]R[/COLOR]', '[COLOR white]S[/COLOR]', '[COLOR white]T[/COLOR]', '[COLOR white]U[/COLOR]', '[COLOR white]V[/COLOR]', '[COLOR white]W[/COLOR]', '[COLOR white]X[/COLOR]', '[COLOR white]Y[/COLOR]', '[COLOR white]Z[/COLOR]'])
-        lists = ['', 'NUMEROS', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-     buscador = lists[ret]
+    lists = ['', 'NUMEROS', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    buscador = lists[ret]
 
     if '' == buscador:
       try:
