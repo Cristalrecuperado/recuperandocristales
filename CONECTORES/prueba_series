@@ -18,7 +18,7 @@
 
 
 <item>
-<title>[COLOR gold]* [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
+<title>[COLOR gold]*1 [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
 <link>$doregex[c]</link>
 <regex>
 <name>c</name>
@@ -62,7 +62,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
     else:
       xbmc.log('11paso por else: ', LOGNOTICE)
       try:
-          ExpresCristal = re.findall('(?s)<title>(.).*?te\](.*?)<.*?externallink>(.*?)<.*?info>(.*?)<.*?thumbnail>(.*?)<.*?fanart>(.*?)<', extraer)
+          ExpresCristal = re.findall('(?s)<title>.*?te\](.)(.*?)<.*?externallink>(.*?)<.*?info>(.*?)<.*?thumbnail>(.*?)<.*?fanart>(.*?)<', extraer)
       except:
           ExpresCristal = []
       lista_nueva = []
