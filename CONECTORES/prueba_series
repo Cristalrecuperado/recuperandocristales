@@ -18,7 +18,7 @@
 
 
 <item>
-<title>[COLOR gold]*5 [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
+<title>[COLOR gold]*6 [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
 <link>$doregex[c]</link>
 <regex>
 <name>c</name>
@@ -62,6 +62,20 @@ def GetLSProData(page_data,Cookie_Jar,m):
       lista_nueva = []
       for item in ExpresCristal:
           lista_nueva += [(item[0], item[1], item[2], item[3], item[4], '$dore' + 'gex[te]', '[COLOR aqua][Server][/COLOR] ')]
+      return [('[COLOR aqua]Cristal Azul Resultados de: [COLOR white]'+buscador, ' ', buscador, 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')] + sorted(lista_nueva) + [('[COLOR white]No hay más resultados...', ' ', buscador, 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')]
+    elif 'NUMEROS' == buscador:
+      xbmc.log('11paso por elif: ', LOGNOTICE)
+      try:
+          ExpresCristal = re.findall('(?s)<title>.*?te\](.)(.*?)<.*?externallink>(.*?)<.*?info>(.*?)<.*?thumbnail>(.*?)<.*?fanart>(.*?)<', extraer)
+      except:
+          ExpresCristal = []
+      lista_nueva = []
+      for item in ExpresCristal:
+          if '0' == item[0] or  '1' == item[0] or  '2' == item[0] or  '3' == item[0] or  '4' == item[0] or  '5' == item[0] or  '6' == item[0] or  '7' == item[0] or  '8' == item[0] or  '9' == item[0]:
+              lista_nueva += [(item[0]+item[1], item[2], item[3], item[4], item[5], '$dore' + 'gex[te]', '[COLOR aqua][Server][/COLOR] ')]
+          else:
+              url = ''
+
       return [('[COLOR aqua]Cristal Azul Resultados de: [COLOR white]'+buscador, ' ', buscador, 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')] + sorted(lista_nueva) + [('[COLOR white]No hay más resultados...', ' ', buscador, 'https://i.imgur.com/2tS3oPI.jpg', 'https://i.imgur.com/2tS3oPI.jpg', ' ', ' ')]
     else:
       xbmc.log('11paso por else: ', LOGNOTICE)
