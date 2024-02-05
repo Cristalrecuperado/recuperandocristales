@@ -20,7 +20,6 @@
 <item>
 <title>[COLOR gold]* [/COLOR][COLOR aqua]Series [COLOR white]Cristal [COLOR gold][/COLOR]</title>
 <link>$doregex[c]</link>
-<itemrepeat>True</itemrepeat>
 <regex>
 <name>c</name>
 <listrepeat><![CDATA[
