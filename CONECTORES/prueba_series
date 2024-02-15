@@ -11,7 +11,7 @@
 
 
 <item>
-<title>[COLOR gold]**[/COLOR] [COLOR aqua]Buscador [COLOR white]Peliculas Estrenos[/COLOR]</title>
+<title>[COLOR gold]1**[/COLOR] [COLOR aqua]Buscador [COLOR white]Peliculas Estrenos[/COLOR]</title>
 <link>$doregex[c]</link>
 <itemrepeat>True</itemrepeat>
 <regex>
@@ -66,7 +66,11 @@ def GetLSProData(page_data,Cookie_Jar,m,PAGINADO=PAGINADO):#cPrLItsLTfakl
         year = re.findall('(?s)<year>(.*?)</', item)[0]
         imagen_p = re.findall('(?s)<thumbnail>(.*?)</', item)[0]
         fanart = re.findall('(?s)<fanart>(.*?)</', item)[0]
-        info = re.findall('(?s)<info>(.*?)<', item)[0]
+        try:
+            info = re.findall('(?s)<info>(.*?)<', item)[0]
+        except:
+            xbmc.log('response loco: ' + titulo + ' PROBLEMA', LOGNOTICE)
+            info = titulo
         url = re.findall('(?s)<urlsolve>(.*?)</', item)[0]
         items_response += [(six.ensure_str(titulo), six.ensure_str(genero), year, imagen_p, fanart, info, url)]
     buscador = xbmcgui.Dialog().input('Buscar Pelicula..: ', type=xbmcgui.INPUT_ALPHANUM)
