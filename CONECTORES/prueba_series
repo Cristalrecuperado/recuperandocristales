@@ -32,9 +32,10 @@
 
 
 <item>
-<title>[COLOR white][B]TPRUEBA[/B][/COLOR]</title>       
+<title>[COLOR white][B]2 TPRUEBA[/B][/COLOR]</title>       
 <link>$doregex[makelist]</link>
-<thumbnail>https://www.televall.online/images/televall_3.jpg</thumbnail>
+  <thumbnail>https://www.televall.online/images/televall_3.jpg</thumbnail>
+  <fanart>https://www.televall.online/images/televall_3.jpg</fanart>
   <regex>
   <name>makelist</name>
   <listrepeat><![CDATA[
@@ -42,7 +43,7 @@
   <link>[makelist.param1]</link>
   <externallink>[makelist.param1]</externallink>
   <thumbnail>https://www.televall.online/images/televall_3.jpg</thumbnail>
-  <fanart></fanart>
+  <fanart>https://www.televall.online/images/televall_3.jpg</fanart>
   ]]></listrepeat>
   <expres><![CDATA[(?s)<p>(http.+?)<\/p>]]></expres>
   <page>https://u.m3uiptv.com/free-iptv-links-m3u-playlists-updated-02-03-2024/</page>
