@@ -12,7 +12,7 @@
   <listrepeat><![CDATA[
   <title>[B][COLOR white][makelist.param1][/COLOR][/B]</title>
   <link>na</link>
-  <externallink>[makelist.param1]</externallink>
+  <externallink>[makelist.param1]$$TSDOWNLOADER$$</externallink>
   <thumbnail>https://www.televall.online/images/televall_3.jpg</thumbnail>
   <fanart>https://www.televall.online/images/televall_3.jpg</fanart>
   ]]></listrepeat>
